@@ -285,7 +285,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'taxonomy',
 					'operator' => '==',
-					'value' => '4',
+					'value' => '3',
 					'order_no' => 0,
 					'group_no' => 0,
 				),
@@ -333,7 +333,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'taxonomy',
 					'operator' => '==',
-					'value' => '10',
+					'value' => '12',
 					'order_no' => 0,
 					'group_no' => 0,
 				),
@@ -367,7 +367,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'taxonomy',
 					'operator' => '==',
-					'value' => '4',
+					'value' => '3',
 					'order_no' => 0,
 					'group_no' => 0,
 				),
@@ -376,7 +376,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'taxonomy',
 					'operator' => '==',
-					'value' => '5',
+					'value' => '8',
 					'order_no' => 0,
 					'group_no' => 1,
 				),
@@ -421,7 +421,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'taxonomy',
 					'operator' => '==',
-					'value' => '10',
+					'value' => '12',
 					'order_no' => 0,
 					'group_no' => 0,
 				),
@@ -430,7 +430,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'taxonomy',
 					'operator' => '==',
-					'value' => '5',
+					'value' => '8',
 					'order_no' => 0,
 					'group_no' => 1,
 				),
@@ -731,7 +731,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'taxonomy',
 					'operator' => '==',
-					'value' => '11',
+					'value' => '10',
 					'order_no' => 0,
 					'group_no' => 0,
 				),
@@ -825,7 +825,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'taxonomy',
 					'operator' => '==',
-					'value' => '4',
+					'value' => '3',
 					'order_no' => 0,
 					'group_no' => 0,
 				),
@@ -946,7 +946,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'taxonomy',
 					'operator' => '==',
-					'value' => '4',
+					'value' => '3',
 					'order_no' => 0,
 					'group_no' => 0,
 				),
@@ -964,7 +964,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'taxonomy',
 					'operator' => '==',
-					'value' => '10',
+					'value' => '12',
 					'order_no' => 0,
 					'group_no' => 2,
 				),
@@ -1041,7 +1041,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'taxonomy',
 					'operator' => '==',
-					'value' => '4',
+					'value' => '3',
 					'order_no' => 0,
 					'group_no' => 0,
 				),
@@ -1050,7 +1050,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'taxonomy',
 					'operator' => '==',
-					'value' => '8',
+					'value' => '4',
 					'order_no' => 0,
 					'group_no' => 1,
 				),
@@ -1059,7 +1059,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'taxonomy',
 					'operator' => '==',
-					'value' => '2',
+					'value' => '5',
 					'order_no' => 0,
 					'group_no' => 2,
 				),
@@ -1086,7 +1086,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'taxonomy',
 					'operator' => '==',
-					'value' => '5',
+					'value' => '8',
 					'order_no' => 0,
 					'group_no' => 5,
 				),
@@ -1095,7 +1095,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'taxonomy',
 					'operator' => '==',
-					'value' => '11',
+					'value' => '10',
 					'order_no' => 0,
 					'group_no' => 6,
 				),
@@ -1104,7 +1104,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'taxonomy',
 					'operator' => '==',
-					'value' => '10',
+					'value' => '12',
 					'order_no' => 0,
 					'group_no' => 7,
 				),
@@ -1113,7 +1113,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'taxonomy',
 					'operator' => '==',
-					'value' => '9',
+					'value' => '13',
 					'order_no' => 0,
 					'group_no' => 8,
 				),
