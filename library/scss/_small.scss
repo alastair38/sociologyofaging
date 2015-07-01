@@ -306,21 +306,24 @@ NAVIGATION STYLES
 	}
 }
 
+i.fi-torsos-all {
+    color: $primary-color;
+}
+
 h1.site-title{
     font-family: 'Montserrat', 'Raleway', sans-serif;
     font-weight: normal;
     float: left;
     width: auto;
-    font-size: 180%;
+    font-size: 120%;
     height: 25px;
     line-height: 25px;
     text-transform: uppercase;
     margin: 10px;
     padding: 0 8px;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     text-align: center;
     z-index: 1;
-    border-left: 25px solid $primary-color;
    & a {
        color: $charcoal;
    }
@@ -471,19 +474,22 @@ REPORTS PAGE
 *********************/
 
 li.report_author,
-li.contribution_type {
+li.contribution_type,
+li.categories {
     list-style-type: none;
     text-align: center;
 }
 
 li.report_author ul,
-li.contribution_type ul {
+li.contribution_type ul,
+li.categories ul {
     list-style-type: none;
     margin-left: 0;
 }
 
 li.report_author ul li,
-li.contribution_type ul li {
+li.contribution_type ul li,
+li.categories ul li {
     background: $primary-color;
     margin-bottom: .5em;
     transition: 350ms;
@@ -634,6 +640,36 @@ CATEGORY / TAXONOMY PAGES
 #sidebar1 h4 {
     margin-top: 1em;
 }
+
+/*********************
+SHARE LINKS
+*********************/
+
+ul.share-links {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    li {
+        font-size: 1em;
+        display: inline-block;
+        margin: 0 2px 0 0;
+        padding: 0;
+        background: $primary-color;
+        width:1.5em;
+        height: 1.5em;
+        text-align: center;
+        border-radius: 50%;
+        transition: 350ms;
+        &:hover {
+            background: $tuatara;
+        }
+        a {
+            color: $white;
+        }
+    }
+}
+
+
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -645,7 +681,7 @@ POSTS & CONTENT STYLES
 	}
 }
 
-.single #main {
+.single #main, .blog #main {
     background: $white;
 }
 

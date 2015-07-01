@@ -44,7 +44,7 @@
     <?php $postType = get_post_type( $post );
 
     if ($postType === post || is_tax('category') ) {
-        wp_list_categories( 'taxonomy=categorye&hide_empty=1&title_li=<h4>All News + Articles</h4>' );
+        wp_list_categories( 'taxonomy=category&hide_empty=1&title_li=<h4>All News and Articles</h4>' );
     }
     ?>
 

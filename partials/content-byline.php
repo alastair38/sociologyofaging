@@ -22,3 +22,4 @@ $user_role = get_the_author_meta( 'roles' );
     ?>
 
 </p>
+<?php get_template_part( 'partials/content', 'sharelinks' ); ?>

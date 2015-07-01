@@ -5521,12 +5521,6 @@ a {
   a img {
     border: none; }
 
-.article-header a:focus,
-.entry-content a:focus,
-#sidebar1 a:focus {
-  padding-bottom: 3px;
-  border-bottom: 2px solid #444; }
-
 /* Default paragraph styles */
 p {
   font-family: inherit;
@@ -6990,21 +6984,23 @@ NAVIGATION STYLES
 .top-bar .title-area {
   z-index: 1; }
 
+i.fi-torsos-all {
+  color: #006080; }
+
 h1.site-title {
   font-family: 'Montserrat', 'Raleway', sans-serif;
   font-weight: normal;
   float: left;
   width: auto;
-  font-size: 180%;
+  font-size: 120%;
   height: 25px;
   line-height: 25px;
   text-transform: uppercase;
   margin: 10px;
   padding: 0 8px;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   text-align: center;
-  z-index: 1;
-  border-left: 25px solid #006080; }
+  z-index: 1; }
   h1.site-title a {
     color: #555555; }
 
@@ -7111,27 +7107,33 @@ MEETINGS PAGE
 REPORTS PAGE
 *********************/
 li.report_author,
-li.contribution_type {
+li.contribution_type,
+li.categories {
   list-style-type: none;
   text-align: center; }
 
 li.report_author ul,
-li.contribution_type ul {
+li.contribution_type ul,
+li.categories ul {
   list-style-type: none;
   margin-left: 0; }
 
 li.report_author ul li,
-li.contribution_type ul li {
+li.contribution_type ul li,
+li.categories ul li {
   background: #006080;
   margin-bottom: .5em;
   transition: 350ms; }
   li.report_author ul li a,
-  li.contribution_type ul li a {
+  li.contribution_type ul li a,
+  li.categories ul li a {
     display: block;
     color: #FFFFFF; }
   li.report_author ul li:hover, li.report_author ul li:focus,
   li.contribution_type ul li:hover,
-  li.contribution_type ul li:focus {
+  li.contribution_type ul li:focus,
+  li.categories ul li:hover,
+  li.categories ul li:focus {
     background: #444444; }
 
 /*********************
@@ -7241,6 +7243,29 @@ CATEGORY / TAXONOMY PAGES
   margin-top: 1em; }
 
 /*********************
+SHARE LINKS
+*********************/
+ul.share-links {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0; }
+  ul.share-links li {
+    font-size: 1em;
+    display: inline-block;
+    margin: 0 2px 0 0;
+    padding: 0;
+    background: #006080;
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    border-radius: 50%;
+    transition: 350ms; }
+    ul.share-links li:hover {
+      background: #444444; }
+    ul.share-links li a {
+      color: #FFFFFF; }
+
+/*********************
 POSTS & CONTENT STYLES
 *********************/
 #content {
@@ -7248,7 +7273,7 @@ POSTS & CONTENT STYLES
   #content #inner-content {
     padding: 1rem 0rem 1rem 0rem; }
 
-.single #main {
+.single #main, .blog #main {
   background: #FFFFFF; }
 
 .contribution-details span {

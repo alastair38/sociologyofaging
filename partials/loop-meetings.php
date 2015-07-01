@@ -48,7 +48,7 @@
 ?>
 
 <h2 id="previousMeetingsTitle" class="columns">Previous Meetings</h2>
-
+<ul id="pageLinks" class="large-4 medium-6 small-12 columns end" role="article" itemscope itemtype="http://schema.org/WebPage">
 <?php
 	$mypages = get_pages( array( 'child_of' => $post->ID, 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
 
@@ -58,14 +58,14 @@
 <?php
         $featured = get_field('featured', $page->ID);
         if( !$featured) {?>
-    <ul id="pageLinks" class="large-4 medium-6 small-12 columns" role="article" itemscope itemtype="http://schema.org/WebPage">
 
-            <li class="previousMeetings"><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></li>
 
-    </ul>
+            <li class="previousMeetings end"><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></li>
+
+
 <?php }
 	 else { } }
 ?>
 
-
+</ul>
 <?php endwhile; endif; ?>

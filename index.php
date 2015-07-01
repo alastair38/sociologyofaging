@@ -4,8 +4,8 @@
 
 				<div id="inner-content" class="row">
 
-				    <div id="main" class="large-8 medium-8 columns" role="main">
-
+				    <div id="main" class="large-12 medium-12 columns" role="main">
+                        <h1 id="taxHeader">News + Articles</h1>
 					  <!-- To see additional archive styles, visit the /partials directory -->
 					    <?php get_template_part( 'partials/loop', 'archive' ); ?>
 

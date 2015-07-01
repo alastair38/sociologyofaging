@@ -5081,12 +5081,6 @@ a {
   a img {
     border: none; }
 
-.article-header a:focus,
-.entry-content a:focus,
-#sidebar1 a:focus {
-  padding-bottom: 3px;
-  border-bottom: 2px solid #444; }
-
 /* Default paragraph styles */
 p {
   font-family: inherit;

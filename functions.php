@@ -430,6 +430,8 @@ function rp_meta_box_cb()
 
 add_action('admin_head-nav-menus.php', 'wpclean_add_metabox_menu_posttype_archive');
 
+// add post-type archives to menu link options
+
 function wpclean_add_metabox_menu_posttype_archive() {
 add_meta_box('wpclean-metabox-nav-menu-posttype', 'Custom Post Type Archives', 'wpclean_metabox_menu_posttype_archive', 'nav-menus', 'side', 'default');
 }
@@ -478,5 +480,57 @@ if ($post_types) :
     echo '</p>';
 
 endif;
+}
+
+/**
+ * Remove admin bar for all non-admins
+*/
+
+add_action('after_setup_theme', 'remove_admin_bar');
+function remove_admin_bar() {
+if (!current_user_can('administrator') && !is_admin()) {
+  show_admin_bar(false);
+}
+}
+
+add_filter( 'wp_nav_menu_items', 'add_logout_link', 10, 2);
+/**
+ * Add a login/logout link, edit profile and add new articles etc links for logged in users
+ */
+function add_logout_link( $items, $args )
+{
+    if($args->theme_location == 'main-nav')
+    {
+        if(is_user_logged_in())
+        {
+            $items .= '<li><a href="'. get_edit_user_link() .'">Edit Profile</a></li>';
+            $items .= '<li class="has-dropdown"><a href="#">Add New</a>';
+            $items .= '<ul class="dropdown"><li><a href="' . admin_url() . 'post-new.php">Article</a></li>';
+            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=contribution">Contribution</a></li>';
+            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=report">Report</a></li>';
+            $items .= '<li class="logout"><a href="'. wp_logout_url() .'">Log Out</a></li>';
+
+        } else {
+            $items .= '<li><a href="'. wp_login_url() .'">Log In</a></li>';
+        }
+    }
+    return $items;
+}
+
+/**
+ * Redirect non-admins to the home page on login
+*/
+add_filter( 'login_redirect', 'login_redirect_example', 10, 3 );
+
+function login_redirect_example( $redirect_to, $request, $user ) {
+    global $user;
+    if ( isset( $user->roles ) && is_array( $user->roles ) ) {
+        if ( in_array( 'administrator', $user->roles ) ) {
+            return admin_url();
+        } else {
+            return home_url();
+            }
+    }
+    return;
 }
 ?>
