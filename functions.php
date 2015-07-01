@@ -7,10 +7,11 @@ INCLUDE NEEDED FILES
 // LOAD JOINTSWP CORE (if you remove this, the theme will break)
 require_once(get_template_directory().'/library/joints.php');
 
-// USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
-require_once(get_template_directory().'/library/custom-post-type.php'); // you can disable this if you like
+// USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY // you can disable this if you like
 
 include_once(get_template_directory().'/bower_components/acf/acf.php' );
+
+require_once(get_template_directory().'/library/custom-post-type.php');
 
 include_once(get_template_directory().'/bower_components/wpas/wpas.php' );
 
