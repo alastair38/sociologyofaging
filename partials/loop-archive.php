@@ -11,7 +11,10 @@
 
 		<section class="entry-content" itemprop="articleBody">
 			<a href="<?php the_permalink() ?>"><?php the_post_thumbnail('full'); ?></a>
-			<?php the_content('<button class="tiny">Read more...</button>'); ?>
+            <?php $content = get_the_content();
+            $trimContent = wp_trim_words( $content, $num_words = 50, $more = null );
+			echo $trimContent;
+            ?>
 		</section> <!-- end article section -->
 
 		<footer class="article-footer">

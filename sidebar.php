@@ -13,6 +13,7 @@
 
     if($parent){
     echo '<h4>Related Pages</h4>';
+    echo '<li class="previousMeetings"><a href="' . get_page_link( $parent ) . '">' . get_the_title( $parent ) . '</a></li>';
 	$mypages = get_pages( array( 'child_of' => $parent, 'exclude' => $post->ID, 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
 
 	foreach( $mypages as $page ) {

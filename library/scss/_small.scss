@@ -496,9 +496,6 @@ MEETINGS PAGE
 
 .page-parent #main {
     background: $white;
-    h1 {
-        border-bottom: 1px solid $base;
-    }
 }
 
 .page-child #main {
@@ -738,7 +735,7 @@ ul#pageLinks li {
     font-size: 130%;
     width: 100%;
     padding: .25em;
-    margin-bottom: 1em;
+    margin-bottom: .5em;
     background: $primary-color;
     transition: 350ms;
     &:hover,
@@ -758,6 +755,10 @@ ul#pageLinks li {
 
 .single #main, .blog #main {
     background: $white;
+}
+
+.contribution-details {
+    padding: 1em 0em;
 }
 
 .contribution-details span {
@@ -801,6 +802,7 @@ a#moreInfo {
 .page-title {
     text-align: center;
     margin-bottom: 1em;
+    border-bottom: 1px solid $base;
 }
 
 .archive-title { }

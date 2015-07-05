@@ -839,6 +839,24 @@ if(function_exists("register_field_group"))
 					'group_no' => 1,
 				),
 			),
+            array (
+				array (
+					'param' => 'taxonomy',
+					'operator' => '==',
+					'value' => '6',
+					'order_no' => 0,
+					'group_no' => 1,
+				),
+			),
+            array (
+				array (
+					'param' => 'taxonomy',
+					'operator' => '==',
+					'value' => '12',
+					'order_no' => 0,
+					'group_no' => 1,
+				),
+			),
 			array (
 				array (
 					'param' => 'post_type',

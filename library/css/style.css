@@ -7119,8 +7119,6 @@ MEETINGS PAGE
 
 .page-parent #main {
   background: #FFFFFF; }
-  .page-parent #main h1 {
-    border-bottom: 1px solid #AAAAAA; }
 
 .page-child #main {
   background: #FFFFFF; }
@@ -7311,7 +7309,7 @@ ul#pageLinks li {
     font-size: 130%;
     width: 100%;
     padding: .25em;
-    margin-bottom: 1em;
+    margin-bottom: .5em;
     background: #006080;
     transition: 350ms; }
     ul#pageLinks li a:hover, ul#pageLinks li a:focus {
@@ -7324,6 +7322,9 @@ ul#pageLinks li {
 
 .single #main, .blog #main {
   background: #FFFFFF; }
+
+.contribution-details {
+  padding: 1em 0em; }
 
 .contribution-details span {
   display: block;
@@ -7348,7 +7349,8 @@ a#moreInfo {
 /* end .hentry */
 .page-title {
   text-align: center;
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  border-bottom: 1px solid #AAAAAA; }
 
 /* want to style individual post classes? Booya! */
 /* post by id (i.e. post-3) */
