@@ -203,21 +203,20 @@ Scroll to top button
 	padding:10px;
     margin: 0;
 	text-align:center;
-	background: $contrast-color;
-	font-weight: bold;
-	color: #444;
+	background: $charcoal;
+	color: $white;
 	text-decoration: none;
 	position:fixed;
-	bottom:20px;
-	right:45%;
+	bottom:10px;
+	right:10px;
 	display:none;
     z-index: 11;
 }
 
 .scrollToTop:hover, scrollToTop:focus {
 	text-decoration:none;
-    color: $oil;
-    background: scale-color($contrast-color, $lightness: -14%);
+    color: $snow;
+    background: scale-color($charcoal, $lightness: -14%);
 }
 
 /*********************
@@ -358,10 +357,10 @@ HOME PAGE
 .home-page-title {
     font-family: 'Montserrat', 'Raleway', sans-serif;
     text-transform: uppercase;
+    color: $white;
 }
 .home {
     #content {
-    background: url('http://127.0.0.1/sociologyofaging/wp-content/uploads/2015/06/couplewalking_TS.jpg') no-repeat;
     background-size: cover;
     min-height: 95vh;
     padding-left: 2em;
@@ -371,10 +370,28 @@ HOME PAGE
     padding: .5em;
     margin-bottom: 3em;
     }
-    article, aside {
+    article {
     padding: 2em 1em;
     height: 27em;
-    background: rgba(255,255,255,.85);
+    background: rgba(68,68,68, .5);
+    a {
+        color: $contrast-color;
+    }
+    &:focus, a:hover {
+        text-decoration: underline;
+    }
+    p {
+        font-size: 120%;
+        line-height: 2em;
+        color: $white;
+    }
+    }
+    aside {
+    padding: 2em 1em;
+    height: 27em;
+    background: rgba(68,68,68, .5);
+    a {
+    }
     p {
         font-size: 120%;
         line-height: 2em;
@@ -382,40 +399,68 @@ HOME PAGE
     }
 }
 
-///testing links
-
-ul#pageLinks {
+ul#homeLinks {
     text-align: center;
     margin-left: 0;
 }
 
-ul#pageLinks li {
+ul#homeLinks li {
     list-style-type: none;
     a {
     display: block;
-    color: $white;
+    color: $charcoal;
     font-size: 130%;
     width: 100%;
     padding: .25em;
     margin-bottom: 1em;
-    background: $tuatara;
+    border: 1px solid rgba(255,255,255,.9);
+    background: rgba(255,255,255,.9);
     transition: 350ms;
     &:hover,
     &:focus {
-        background: $primary-color;
+        background: transparent;
+        color: $white;
+        text-decoration: none;
     }
     }
 
 }
 
+.home {
 #latestNewsTitle {
     text-align: center;
+    color: $white;
 }
 
 .latestNews {
     margin: .5em 0em;
     a:focus, a:hover > h6 {
-        color: $charcoal;
+        text-decoration: underline;
+    }
+    h6 {
+        display: inline;
+        color: $white;
+    }
+    img {
+        border-radius: 50%;
+        border: 5px solid rgba(68,68,68, .4);
+        transition: 300ms;
+    &:hover {
+        border: 5px solid $white;
+    }
+    }
+}
+}
+
+#latestNewsTitle {
+    text-align: center;
+    color: $charcoal;
+}
+
+.latestNews {
+    margin: .5em 0em;
+    a:focus, a:hover > h6 {
+        text-decoration: underline;
     }
     h6 {
         display: inline;
@@ -429,6 +474,14 @@ ul#pageLinks li {
         border: 5px solid $primary-color;
     }
     }
+}
+
+/*********************
+FOOTER
+*********************/
+
+.source-org {
+    text-align: center;
 }
 
 /*********************
@@ -674,6 +727,30 @@ ul.share-links {
 POSTS & CONTENT STYLES
 *********************/
 
+ul#pageLinks {
+    text-align: center;
+    margin-left: 0;
+}
+
+ul#pageLinks li {
+    list-style-type: none;
+    a {
+    display: block;
+    color: $white;
+    font-size: 130%;
+    width: 100%;
+    padding: .25em;
+    margin-bottom: 1em;
+    background: $primary-color;
+    transition: 350ms;
+    &:hover,
+    &:focus {
+        background: $tuatara;
+    }
+    }
+
+}
+
 #content {
     padding-top: 3em;
 	#inner-content {
@@ -690,8 +767,11 @@ POSTS & CONTENT STYLES
     margin: 0.5em 0;
 }
 
-#contactDetails p {
+#contactDetails {
+    margin-top: 1em;
+p {
     line-height: 1em;
+}
 }
 
 a#moreInfo {

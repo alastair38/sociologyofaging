@@ -5,8 +5,14 @@ Template Name: Full Width (No Sidebar)
 ?>
 
 <?php get_header(); ?>
+<?php
+$thumb_id = get_post_thumbnail_id();
+$thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail-size', true);
+?>
 
-			<div id="content">
+			<div id="content" style="background:url('<?php echo $thumb_url[0];?>') no-repeat;">
+
+
 
 				<div id="inner-content" class="">
 

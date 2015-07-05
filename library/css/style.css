@@ -5110,10 +5110,10 @@ meta.foundation-mq-topbar {
       color: #000000;
       text-decoration: underline; }
       .top-bar-section ul li.active > a:hover {
-        background: #EEEEEE;
+        background: #DDDDDD;
         color: #000000; }
       .top-bar-section ul li.active > a:focus {
-        background: #EEEEEE;
+        background: #DDDDDD;
         color: #000000; }
   .top-bar-section .has-form {
     padding: 0.9375rem; }
@@ -6924,20 +6924,19 @@ Scroll to top button
   padding: 10px;
   margin: 0;
   text-align: center;
-  background: #f2f071;
-  font-weight: bold;
-  color: #444;
+  background: #555555;
+  color: #FFFFFF;
   text-decoration: none;
   position: fixed;
-  bottom: 20px;
-  right: 45%;
+  bottom: 10px;
+  right: 10px;
   display: none;
   z-index: 11; }
 
 .scrollToTop:hover, scrollToTop:focus {
   text-decoration: none;
-  color: #333333;
-  background: #eeeb43; }
+  color: #F9F9F9;
+  background: #494949; }
 
 /*********************
 LINK STYLES
@@ -7022,10 +7021,10 @@ HOME PAGE
 *********************/
 .home-page-title {
   font-family: 'Montserrat', 'Raleway', sans-serif;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  color: #FFFFFF; }
 
 .home #content {
-  background: url("http://127.0.0.1/sociologyofaging/wp-content/uploads/2015/06/couplewalking_TS.jpg") no-repeat;
   background-size: cover;
   min-height: 95vh;
   padding-left: 2em;
@@ -7033,39 +7032,72 @@ HOME PAGE
 .home .large-8, .home .large-4 {
   padding: .5em;
   margin-bottom: 3em; }
-.home article, .home aside {
+.home article {
   padding: 2em 1em;
   height: 27em;
-  background: rgba(255, 255, 255, 0.85); }
-  .home article p, .home aside p {
+  background: rgba(68, 68, 68, 0.5); }
+  .home article a {
+    color: #f2f071; }
+  .home article:focus, .home article a:hover {
+    text-decoration: underline; }
+  .home article p {
+    font-size: 120%;
+    line-height: 2em;
+    color: #FFFFFF; }
+.home aside {
+  padding: 2em 1em;
+  height: 27em;
+  background: rgba(68, 68, 68, 0.5); }
+  .home aside p {
     font-size: 120%;
     line-height: 2em; }
 
-ul#pageLinks {
+ul#homeLinks {
   text-align: center;
   margin-left: 0; }
 
-ul#pageLinks li {
+ul#homeLinks li {
   list-style-type: none; }
-  ul#pageLinks li a {
+  ul#homeLinks li a {
     display: block;
-    color: #FFFFFF;
+    color: #555555;
     font-size: 130%;
     width: 100%;
     padding: .25em;
     margin-bottom: 1em;
-    background: #444444;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.9);
     transition: 350ms; }
-    ul#pageLinks li a:hover, ul#pageLinks li a:focus {
-      background: #006080; }
+    ul#homeLinks li a:hover, ul#homeLinks li a:focus {
+      background: transparent;
+      color: #FFFFFF;
+      text-decoration: none; }
+
+.home #latestNewsTitle {
+  text-align: center;
+  color: #FFFFFF; }
+.home .latestNews {
+  margin: .5em 0em; }
+  .home .latestNews a:focus, .home .latestNews a:hover > h6 {
+    text-decoration: underline; }
+  .home .latestNews h6 {
+    display: inline;
+    color: #FFFFFF; }
+  .home .latestNews img {
+    border-radius: 50%;
+    border: 5px solid rgba(68, 68, 68, 0.4);
+    transition: 300ms; }
+    .home .latestNews img:hover {
+      border: 5px solid #FFFFFF; }
 
 #latestNewsTitle {
-  text-align: center; }
+  text-align: center;
+  color: #555555; }
 
 .latestNews {
   margin: .5em 0em; }
   .latestNews a:focus, .latestNews a:hover > h6 {
-    color: #555555; }
+    text-decoration: underline; }
   .latestNews h6 {
     display: inline;
     color: #006080; }
@@ -7075,6 +7107,12 @@ ul#pageLinks li {
     transition: 300ms; }
     .latestNews img:hover {
       border: 5px solid #006080; }
+
+/*********************
+FOOTER
+*********************/
+.source-org {
+  text-align: center; }
 
 /*********************
 MEETINGS PAGE
@@ -7268,6 +7306,24 @@ ul.share-links {
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+ul#pageLinks {
+  text-align: center;
+  margin-left: 0; }
+
+ul#pageLinks li {
+  list-style-type: none; }
+  ul#pageLinks li a {
+    display: block;
+    color: #FFFFFF;
+    font-size: 130%;
+    width: 100%;
+    padding: .25em;
+    margin-bottom: 1em;
+    background: #006080;
+    transition: 350ms; }
+    ul#pageLinks li a:hover, ul#pageLinks li a:focus {
+      background: #444444; }
+
 #content {
   padding-top: 3em; }
   #content #inner-content {
@@ -7280,8 +7336,10 @@ POSTS & CONTENT STYLES
   display: block;
   margin: 0.5em 0; }
 
-#contactDetails p {
-  line-height: 1em; }
+#contactDetails {
+  margin-top: 1em; }
+  #contactDetails p {
+    line-height: 1em; }
 
 a#moreInfo {
   background: #006080;

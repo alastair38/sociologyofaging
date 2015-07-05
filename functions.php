@@ -503,11 +503,11 @@ function add_logout_link( $items, $args )
     {
         if(is_user_logged_in())
         {
+            $items .= '<li class="has-dropdown"><a href="#">Your Account</a>';
+            $items .= '<ul class="dropdown"><li><a href="' . admin_url() . 'post-new.php">New Article</a></li>';
+            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=contribution">New Contribution</a></li>';
+            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=report">New Report</a></li>';
             $items .= '<li><a href="'. get_edit_user_link() .'">Edit Profile</a></li>';
-            $items .= '<li class="has-dropdown"><a href="#">Add New</a>';
-            $items .= '<ul class="dropdown"><li><a href="' . admin_url() . 'post-new.php">Article</a></li>';
-            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=contribution">Contribution</a></li>';
-            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=report">Report</a></li>';
             $items .= '<li class="logout"><a href="'. wp_logout_url() .'">Log Out</a></li>';
 
         } else {

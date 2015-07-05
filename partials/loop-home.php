@@ -7,7 +7,7 @@
 		</header> <!-- end article header -->
 
 	    <section class="entry-content" itemprop="articleBody">
-            <?php the_post_thumbnail('full');?>
+
 		    <?php the_content(); ?>
 		    <?php wp_link_pages(); ?>
 		</section> <!-- end article section -->
@@ -15,7 +15,7 @@
 		<footer class="article-footer">
 
 		</footer> <!-- end article footer -->
-<ul id="pageLinks">
+<ul id="homeLinks">
 		    <?php
 $page1 = get_page_by_title( 'Committee' );
 $page2 = get_page_by_title( 'About' );

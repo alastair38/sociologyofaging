@@ -4670,10 +4670,10 @@ meta.foundation-mq-topbar {
       color: #000000;
       text-decoration: underline; }
       .top-bar-section ul li.active > a:hover {
-        background: #EEEEEE;
+        background: #DDDDDD;
         color: #000000; }
       .top-bar-section ul li.active > a:focus {
-        background: #EEEEEE;
+        background: #DDDDDD;
         color: #000000; }
   .top-bar-section .has-form {
     padding: 0.9375rem; }

@@ -22,9 +22,9 @@
 					    ?>
                         <?php get_template_part( 'partials/content', 'author' ); ?>
 
-					    <?php } elseif (is_post_type_archive('contributions')) { ?>
+					    <?php } elseif (is_post_type_archive('contribution')) { ?>
 						    <h1 id="taxHeader">
-	    						<span>Member Contributions</span>
+	    						<span>Announcements</span>
 						    </h1>
 
 		    			<?php } elseif (is_post_type_archive('report')) { ?>
@@ -32,22 +32,16 @@
 				    	    	<span>President + Secretary Reports</span>
 					        </h1>
 
-                        <?php } elseif (is_post_type_archive('contribution')) { ?>
-			    		    <h1 id="taxHeader">
-				    	    	<span>Member Contributions</span>
-					        </h1>
-
 					    <?php } elseif (is_tax('report_author')) { ?>
 					        <h1 id="taxHeader">
-					    	    <span>Member Contributions Posted To </span>
                                 <?php $the_tax = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
                                             echo $the_tax->name;
-                                            ?>
+                                            ?><span> Reports </span>
 					        </h1>
 
                          <?php } elseif (is_tax('contribution_type')) { ?>
 					        <h1 id="taxHeader">
-					    	    <span>Member Contributions Posted To </span>
+					    	    <span>Announcements - </span>
                                 <?php $the_tax = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
                                             echo $the_tax->name;
                                             ?>
