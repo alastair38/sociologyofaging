@@ -11,6 +11,73 @@ Styles apply to 40.063em and up.
 /*********************
 NAVIGATION STYLES
 *********************/
+h1.site-title{
+    font-family: 'Montserrat', 'Raleway', sans-serif;
+    font-weight: normal;
+    float: none;
+    width: auto;
+    font-size: 120%;
+    height: 25px;
+    line-height: 25px;
+    text-transform: uppercase;
+    margin: 10px;
+    padding: 0 8px;
+    letter-spacing: 3px;
+    text-align: center;
+    z-index: 1;
+   & a {
+       color: $charcoal;
+   }
+}
+
+/*********************
+HOME PAGE
+*********************/
+
+.home-page-title {
+    font-size: 200%; //200% for large screens
+    text-align: left; //left for large screens
+}
+.home {
+    #content {
+    min-height: 35em;
+    padding-left: 2em; //2em for large screens
+    padding-right: 2em; //2em for large screens
+    }
+    .large-8, .large-4 {
+    padding: .5em;
+    margin-bottom: 3em; //3em large screens
+    }
+    article {
+    padding: 2em 1em; // 2em 1em for large screens
+    min-height: 30em; //27em for large screen
+    background: transparent;
+    p {
+        font-size: 120%; // 120% for large screens
+        line-height: 2em; // 2em for large screens
+    }
+}
+    aside {
+    padding: 2em 1em;
+    height: auto;
+    background: rgba(68,68,68, .9);
+    margin-top: 0em;
+    a {
+    }
+    p {
+        font-size: 120%;
+        line-height: 2em;
+    }
+    }
+}
+
+
+ul#homeLinks li {
+    a {
+    font-size: 130%; //large screens 130%
+    margin-bottom: 1em; //1em on large screens
+    }
+}
 
 
 /*********************

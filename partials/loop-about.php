@@ -21,6 +21,7 @@
 
 	</article> <!-- end article -->
 
+<ul id="pageLinks">
 
 <?php
 	$mypages = get_pages( array( 'child_of' => $post->ID, 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
@@ -29,14 +30,15 @@
 
 	?>
 
-    <ul id="pageLinks" class="large-4 medium-6 small-12 columns end" role="article" itemscope itemtype="http://schema.org/WebPage">
 
-            <li class="previousMeetings"><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></li>
 
-    </ul>
+            <li class="previousMeetings large-6 medium-6 small-12 columns end" role="article" itemscope itemtype="http://schema.org/WebPage"><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></li>
+
+
 <?php }
 
 ?>
 
 
 <?php endwhile; endif; ?>
+</ul>

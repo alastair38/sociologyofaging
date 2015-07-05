@@ -41,9 +41,63 @@ HEADER STYLES
 
 	#logo {}
 
+
+h1.site-title{
+    float: left;
+}
 /*********************
 NAVIGATION STYLES
 *********************/
+
+
+/*********************
+HOME PAGE
+*********************/
+
+.home-page-title {
+    font-size: 200%; //200% for large screens
+    text-align: left; //left for large screens
+}
+.home {
+    #content {
+    min-height: 40em;
+    padding-left: 2em; //2em for large screens
+    padding-right: 2em; //2em for large screens
+    }
+    .large-8, .large-4 {
+    padding: .5em;
+    margin-bottom: 3em; //3em large screens
+    }
+    article {
+    padding: 2em 1em; // 2em 1em for large screens
+    min-height: 27em; //27em for large screen
+    background: rgba(68,68,68, .5);
+    p {
+        font-size: 120%; // 120% for large screens
+        line-height: 2em; // 2em for large screens
+    }
+}
+    aside {
+    padding: 2em 1em;
+    height: 27em;
+    background: rgba(68,68,68, .5);
+    margin-top: 0em;
+    a {
+    }
+    p {
+        font-size: 120%;
+        line-height: 2em;
+    }
+    }
+}
+
+
+ul#homeLinks li {
+    a {
+    font-size: 130%; //large screens 130%
+    margin-bottom: 1em; //1em on large screens
+    }
+}
 
 /*********************
 SIDEBARS & ASIDES
