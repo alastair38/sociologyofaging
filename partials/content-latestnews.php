@@ -8,16 +8,23 @@
 
                         <?php if( $newsitems ): ?>
                         <h4 id="latestNewsTitle">Latest News</h4>
+                        <ul class="latestNews">
                         <?php foreach( $newsitems as $newsitem ): ?>
 
-                        <div class="latestNews">
+
                             <?php $title = get_the_title( $newsitem->ID );
                             $trimmedTitle = wp_trim_words( $title, $num_words = 5, $more = '...' );?>
-                            <a href="<?php echo get_the_permalink( $newsitem->ID ); ?>">
-                            <?php echo get_the_post_thumbnail($newsitem->ID, array( 50, 50));?>
-                            <h6><?php echo $trimmedTitle; ?></h6></a>
-                       </div>
+                            <li><a href="<?php echo get_the_permalink( $newsitem->ID ); ?>">
+                            <?php if ( has_post_thumbnail($newsitem->ID) ) {
+                            echo get_the_post_thumbnail($newsitem->ID, array( 50, 50));
+                            } else { ?>
+                            <img width="50" height="50" src="<?php echo get_template_directory_uri(); ?>/library/images/featured.png" class="defaultImg wp-post-image" alt="<?php the_title(); ?>"/>
+                            <?php }
+                            echo '<h6>' . $trimmedTitle . '</h6>';?>
+                            </a></li>
 
 <?php endforeach; ?>
+
+</div>
 <?php endif; ?>
 

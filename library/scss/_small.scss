@@ -418,6 +418,10 @@ ul#homeLinks li {
 
 .latestNews {
     margin: .5em 0em;
+    li {
+        list-style-type: none;
+        margin-bottom: 1em;
+    }
     a:focus, a:hover > h6 {
         text-decoration: underline;
     }
@@ -429,6 +433,7 @@ ul#homeLinks li {
         border-radius: 50%;
         border: 5px solid rgba(68,68,68, .4);
         transition: 300ms;
+        margin-right: 5px;
     &:hover {
         border: 5px solid $white;
     }
@@ -443,6 +448,10 @@ ul#homeLinks li {
 
 .latestNews {
     margin: .5em 0em;
+    li {
+        list-style-type: none;
+        margin-bottom: 1em;
+    }
     a:focus, a:hover > h6 {
         text-decoration: underline;
     }
@@ -454,10 +463,15 @@ ul#homeLinks li {
         border-radius: 50%;
         border: 5px solid transparent;
         transition: 300ms;
+        margin-right: 5px;
     &:hover {
         border: 5px solid $primary-color;
     }
     }
+}
+
+img.defaultImg.wp-post-image {
+    margin-right: 0px;
 }
 
 /*********************
@@ -767,10 +781,13 @@ ul#pageLinks li {
 }
 
 #contactDetails {
-    margin-top: 1em;
-p {
-    line-height: 1em;
-}
+    margin: 1em 0em;
+    p {
+    line-height: 1.6em;
+    }
+    span {
+    display: block;
+    }
 }
 
 a#moreInfo {

@@ -70,22 +70,21 @@
 
 <div id="contactDetails" class="large-4 medium-4 small-12 columns">
     <?php the_post_thumbnail('medium'); ?>
-    <h4>Contact Details</h4>
     <?php
 
         $name = get_field('name');
         if($name) {
-        echo '<p>' . $name . '</p>';
+        echo '<h4>Contact Details</h4><span>' . $name . '</span>';
         }
 
         $email = get_field('email');
         if($email) {
-        echo '<p>E: <a href="mailto:' . $email . '" target="_blank">Contact ' . $name . '</a></p>';
+        echo '<span>E: <a href="mailto:' . $email . '" target="_blank">Email ' . $name . '</a></span>';
         }
 
         $phone = get_field('phone');
         if($phone) {
-        echo '<p>T: ' . $phone . '</p>';
+        echo '<span>T: ' . $phone . '</span>';
         }
 
 ?>
@@ -96,7 +95,16 @@
         echo '<h4>Address</h4><p>' . $address . '</p>';
         }
 
+        $location = get_field('google_map');
+        if($location) {
+        echo '<h4>Map</h4>';
 
 ?>
+    <a href="http://maps.google.co.uk/maps/place/<?php echo $location['lat']; ?>,<?php echo $location['lng']; ?>/@<?php echo $location['lat']; ?>,<?php echo $location['lng']; ?>,15z" target="_blank" title="View map full screen" class="show-for-large-only"><img src="https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=600x300&scale=2&maptype=roadmap
+          &markers=color:green%7C<?php echo $location['lat']; ?>,<?php echo $location['lng']; ?>"></a>
+
+                             <a href="geo:<?php echo $location['lat']; ?>,<?php echo $location['lng']; ?>;u=35" class="hide-for-large-only"><img src="https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=600x300&scale=2&maptype=roadmap
+          &markers=color:green%7C<?php echo $location['lat']; ?>,<?php echo $location['lng']; ?>"></a>
+    <?php } ;?>
 </div>
 
