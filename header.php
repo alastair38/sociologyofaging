@@ -8,7 +8,7 @@
 		<!-- Force IE to use the latest rendering engine available -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title><?php wp_title(''); ?></title>
+		<title><?php bloginfo('name'); ?> <?php wp_title('-'); ?></title>
 
 		<!-- Mobile Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -70,7 +70,7 @@
                             <div id="modalOverlay" tabindex="-1"></div>
                             -->
 
-                            <button href="#" class="scrollToTop">Back To Top</button>
+                            <button href="#" class="scrollToTop"><i class="fi-play-circle"></i></button>
 
 						</div> <!-- end #inner-header -->
 

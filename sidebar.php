@@ -2,7 +2,7 @@
 
      <?php get_template_part( 'partials/content', 'latestnews' ); ?>
 
-    <ul id="pageLinks" class="small-12 columns end" role="article" itemscope itemtype="http://schema.org/WebPage">
+
 
     <?php
     //GET CHILD PAGES IF THERE ARE ANY
@@ -12,7 +12,7 @@
     $parent = $post->post_parent;
 
     if($parent){
-    echo '<h4>Related Pages</h4>';
+    echo '<ul id="pageLinks" class="small-12 columns end" role="article" itemscope itemtype="http://schema.org/WebPage"><h4>Related Pages</h4>';
     echo '<li class="previousMeetings"><a href="' . get_page_link( $parent ) . '">' . get_the_title( $parent ) . '</a></li>';
 	$mypages = get_pages( array( 'child_of' => $parent, 'exclude' => $post->ID, 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
 
@@ -24,9 +24,9 @@
 
 
 <?php }
+    echo '</ul>';
 }
 ?>
-    </ul>
 
    <?php $postType = get_post_type( $post );
 

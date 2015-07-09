@@ -41,13 +41,9 @@
 
         $price = get_field('price');
         if($price) {
-        echo '<label>Price:</label>' . $price ;
+        echo '<span><strong>Price: </strong></span>' . $price ;
         }
 
-        $authors = get_field('authors');
-        if($authors) {
-        echo  $authors ;
-        }
 
         the_content();
 
@@ -71,6 +67,17 @@
 <div id="contactDetails" class="large-4 medium-4 small-12 columns">
     <?php the_post_thumbnail('medium'); ?>
     <?php
+
+        $authorEmail = get_field('author_email');
+        if($authorEmail) {
+        echo '<h4>Contact Details</h4><span>E: <a href="mailto:' . $authorEmail . '" target="_blank">Email the author</a></span>';
+        }
+        $website = get_field('website');
+        if($website) {
+        echo '<a href="' . $website . '" target="_blank">View the author website</a></span>';
+        }
+
+
 
         $name = get_field('name');
         if($name) {
@@ -106,5 +113,34 @@
                              <a href="geo:<?php echo $location['lat']; ?>,<?php echo $location['lng']; ?>;u=35" class="hide-for-large-only"><img src="https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=600x300&scale=2&maptype=roadmap
           &markers=color:green%7C<?php echo $location['lat']; ?>,<?php echo $location['lng']; ?>"></a>
     <?php } ;?>
+    <?php
+        $pubType = get_field('publication_type');
+        $authors = get_field('authors');
+        $bookName = get_field('book_name');
+        $yearPub = ' (' . get_field('year_of_publication') . ').';
+        $placePub = get_field('place_of_publication') . ': ';
+        $publisher = get_field('publisher');
+        $journal = get_field('journal_name');
+        $volume = get_field('volume');
+        $issue = '(' . get_field('issue') . ')';
+        $pageNos = ', pp.' . get_field('page_numbers');
+        $journalNos = ':' . get_field('page_numbers');
+        $title = get_the_title();
+
+        if($pubType === 'Book') {
+        echo '<div id="pubDetails"><h4>Publication Details</h4>' . $authors . ' ' . $yearPub . '<em>' . $title . '</em>, ' . $placePub . $publisher . '</div>';
+        }
+
+        if($pubType === 'Book Chapter') {
+        echo '<div id="pubDetails"><h4>Publication Details</h4>' . $authors . ', Eds' . $yearPub . '<em>' . $title . '</em>, ' . $placePub . $publisher . $pageNos . '</div>';
+        }
+
+        if($pubType === 'Journal') {
+        echo  '<div id="pubDetails"><h4>Publication Details</h4>' . $authors . $yearPub . '<em>' . $title . '</em>. ' . $journal . '. ' . $volume . $issue . $journalNos . '</div>';
+        }
+
+         if($pubType === 'Report') {
+        echo  '<div id="pubDetails"><h4>Publication Details</h4>' . $authors . ' ' . $yearPub . '<em>' . $title . '</em>, ' . $placePub . $publisher . '</div>';
+        }?>
 </div>
 

@@ -16,7 +16,6 @@
 
 		</footer> <!-- end article footer -->
 
-		<?php comments_template(); ?>
 
 	</article> <!-- end article -->
 

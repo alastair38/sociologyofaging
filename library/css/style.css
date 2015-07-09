@@ -5893,8 +5893,9 @@ ul.off-canvas-list {
     padding: 0.3rem 0.9375rem;
     color: #999999;
     text-transform: uppercase;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     font-weight: bold;
+    text-align: center;
     background: #444444;
     border-top: 1px solid #5e5e5e;
     border-bottom: none;
@@ -6919,24 +6920,25 @@ LAYOUT & GRID STYLES
 Scroll to top button
 *********************/
 .scrollToTop {
-  width: 10%;
+  width: auto;
   height: auto;
-  padding: 10px;
   margin: 0;
+  font-size: 3em;
   text-align: center;
-  background: #555555;
-  color: #FFFFFF;
+  background: transparent;
+  color: #006080;
   text-decoration: none;
   position: fixed;
-  bottom: 10px;
-  right: 10px;
+  bottom: 0px;
+  right: 0px;
+  transform: rotate(270deg);
   display: none;
   z-index: 11; }
 
 .scrollToTop:hover, scrollToTop:focus {
   text-decoration: none;
-  color: #F9F9F9;
-  background: #494949; }
+  background: transparent;
+  color: #00536e; }
 
 /*********************
 LINK STYLES
@@ -6977,6 +6979,9 @@ HEADER STYLES
 .header ul.off-canvas-list li {
   list-style: none; }
 
+i.fi-torsos-all {
+  margin-right: 5px; }
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -6990,6 +6995,9 @@ i.fi-torsos-all {
   border-bottom: 0px; }
 .off-canvas-list ul .dropdown {
   margin-left: 20px; }
+
+ul#menu-main-1 {
+  margin-left: 0; }
 
 .large-12.columns.show-for-small-only {
   padding: 0; }
@@ -7704,6 +7712,9 @@ MEDIUM
   /*********************
   POSTS & CONTENT STYLES
   *********************/
+  p {
+    font-size: 100%; }
+
   /* entry content */
   .entry-content {
     /* at this larger size, we can start to align images */ }

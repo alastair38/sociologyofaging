@@ -13,7 +13,7 @@
 	<footer class="article-footer">
 		<p class="tags"><?php the_tags('<span class="tags-title">' . __('Tags:', 'jointstheme') . '</span> ', ', ', ''); ?></p>	</footer> <!-- end article footer -->
 
-	<?php comments_template(); ?>
+
 
 </article> <!-- end article -->
 
