@@ -6935,7 +6935,7 @@ Scroll to top button
   display: none;
   z-index: 11; }
 
-.scrollToTop:hover, scrollToTop:focus {
+.scrollToTop:hover, .scrollToTop:focus {
   text-decoration: none;
   background: transparent;
   color: #00536e; }
@@ -6980,6 +6980,7 @@ HEADER STYLES
   list-style: none; }
 
 i.fi-torsos-all {
+  color: #006080;
   margin-right: 5px; }
 
 /*********************
@@ -6987,9 +6988,6 @@ NAVIGATION STYLES
 *********************/
 .top-bar .title-area {
   z-index: 1; }
-
-i.fi-torsos-all {
-  color: #006080; }
 
 .off-canvas-list ul li a {
   border-bottom: 0px; }

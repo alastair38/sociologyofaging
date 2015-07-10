@@ -214,7 +214,7 @@ Scroll to top button
     z-index: 11;
 }
 
-.scrollToTop:hover, scrollToTop:focus {
+.scrollToTop:hover, .scrollToTop:focus {
 	text-decoration:none;
     background: transparent;
     color: scale-color($primary-color, $lightness: -14%);
@@ -298,6 +298,7 @@ HEADER STYLES
 }
 
 i.fi-torsos-all {
+    color: $primary-color;
     margin-right: 5px;
 }
 
@@ -309,11 +310,6 @@ NAVIGATION STYLES
 		z-index: 1;
 	}
 }
-
-i.fi-torsos-all {
-    color: $primary-color;
-}
-
 
 .off-canvas-list {
 	ul {

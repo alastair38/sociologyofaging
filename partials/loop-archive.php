@@ -47,10 +47,6 @@
         echo '<label>Price:</label>' . $price ;
         }
 
-        $authors = get_field('authors');
-        if($authors) {
-        echo  $authors ;
-        }
 
         $content = get_the_content();
             $trimContent = wp_trim_words( $content, $num_words = 50, $more = null );
