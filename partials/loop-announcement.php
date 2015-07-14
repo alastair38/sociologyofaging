@@ -123,7 +123,10 @@
         $journal = get_field('journal_name');
         $volume = get_field('volume');
         $issue = '(' . get_field('issue') . ')';
-        $pageNos = ', pp.' . get_field('page_numbers');
+        $pageNumbers = get_field('page_numbers');
+        if ($pageNumbers) {
+        $pageNos = ', pp.' . $pageNumbers;
+        }
         $journalNos = ':' . get_field('page_numbers');
         $title = get_the_title();
 
