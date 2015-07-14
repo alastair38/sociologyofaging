@@ -8,7 +8,7 @@
 
 					    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-					    	<?php get_template_part( 'partials/loop', 'contribution' ); ?>
+					    	<?php get_template_part( 'partials/loop', 'announcement' ); ?>
 
 					    <?php endwhile; else : ?>
 

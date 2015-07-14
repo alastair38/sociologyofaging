@@ -30,7 +30,7 @@ foreach($allUsers as $currentUser)
 foreach($users as $user)
 {
 	?>
-	<div class="author large-4 medium-6 small-12 columns end">
+	<div class="author large-3 medium-6 small-12 columns end">
 
 		<div class="authorInfo">
 

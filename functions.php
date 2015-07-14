@@ -406,28 +406,6 @@ function theme_post_author_override($output)
   return $output;
 }
 
-add_action( 'add_meta_boxes', 'cd_meta_box_add' );
-function cd_meta_box_add()
-{
-    add_meta_box( 'help', 'Getting Started', 'cd_meta_box_cb', 'contribution', 'side', 'high' );
-}
-
-function cd_meta_box_cb()
-{
-    echo 'Select a <strong>Contribution Type</strong> and then complete the form fields that are made available.<br><br>  Any description you wish to include can be added to the main text editor (below the "Add Media" button) ';
-}
-
-add_action( 'add_meta_boxes', 'rp_meta_box_add' );
-function rp_meta_box_add()
-{
-    add_meta_box( 'help', 'Reminder', 'rp_meta_box_cb', 'report', 'side', 'high' );
-}
-
-function rp_meta_box_cb()
-{
-    echo 'Please remember to assign a <strong>Report Author</strong> before publishing. ';
-}
-
 add_action('admin_head-nav-menus.php', 'wpclean_add_metabox_menu_posttype_archive');
 
 // add post-type archives to menu link options
@@ -505,7 +483,7 @@ function add_logout_link( $items, $args )
         {
             $items .= '<li class="has-dropdown"><a href="#">Your Account</a>';
             $items .= '<ul class="dropdown"><li><a href="' . admin_url() . 'post-new.php">New Article</a></li>';
-            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=contribution">New Contribution</a></li>';
+            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=announcement">New Announcement</a></li>';
             $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=report">New Report</a></li>';
             $items .= '<li><a href="'. get_edit_user_link() .'">Edit Profile</a></li>';
             $items .= '<li class="logout"><a href="'. wp_logout_url() .'">Log Out</a></li>';

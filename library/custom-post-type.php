@@ -5,24 +5,24 @@
 
 function rc11_contributions() {
 	// creating (registering) the custom type
-	register_post_type( 'contribution', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
+	register_post_type( 'announcement', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
 	 	// let's now add all the options for this post type
 		array('labels' => array(
-			'name' => __('Member Contributions', 'rc11theme'), /* This is the Title of the Group */
-			'singular_name' => __('Member Contribution', 'rc11theme'), /* This is the individual type */
-			'all_items' => __('All Member Contributions', 'rc11theme'), /* the all items menu item */
-			'add_new' => __('Add New Contribution', 'rc11theme'), /* The add new menu item */
-			'add_new_item' => __('Add New Contribution', 'rc11theme'), /* Add New Display Title */
+			'name' => __('Announcements', 'rc11theme'), /* This is the Title of the Group */
+			'singular_name' => __('Announcement', 'rc11theme'), /* This is the individual type */
+			'all_items' => __('All Announcements', 'rc11theme'), /* the all items menu item */
+			'add_new' => __('Add New Announcement', 'rc11theme'), /* The add new menu item */
+			'add_new_item' => __('Add New Announcement', 'rc11theme'), /* Add New Display Title */
 			'edit' => __( 'Edit', 'rc11theme' ), /* Edit Dialog */
-			'edit_item' => __('Edit Contribution', 'rc11theme'), /* Edit Display Title */
-			'new_item' => __('New Contribution', 'rc11theme'), /* New Display Title */
-			'view_item' => __('View Contribution', 'rc11theme'), /* View Display Title */
-			'search_items' => __('Search Contributions', 'rc11theme'), /* Search Custom Type Title */
+			'edit_item' => __('Edit Announcement', 'rc11theme'), /* Edit Display Title */
+			'new_item' => __('New Announcement', 'rc11theme'), /* New Display Title */
+			'view_item' => __('View Announcement', 'rc11theme'), /* View Display Title */
+			'search_items' => __('Search Announcements', 'rc11theme'), /* Search Custom Type Title */
 			'not_found' =>  __('Nothing found in the Database.', 'rc11theme'), /* This displays if there are no entries yet */
 			'not_found_in_trash' => __('Nothing found in Trash', 'rc11theme'), /* This displays if there is nothing in the trash */
 			'parent_item_colon' => ''
 			), /* end of arrays */
-			'description' => __( 'RC11 Member Contributions', 'rc11theme' ), /* Custom Type Description */
+			'description' => __( 'RC11 Announcements', 'rc11theme' ), /* Custom Type Description */
 
 			'public' => true,
 			'publicly_queryable' => true,
@@ -31,7 +31,7 @@ function rc11_contributions() {
 			'query_var' => true,
 			'menu_position' => 6, /* this is what order you want it to appear in on the left hand side menu */
 			'menu_icon' => 'dashicons-clipboard', /* the icon for the custom post type menu */
-			'rewrite'	=> array( 'slug' => 'contributions', 'with_front' => false ), /* you can specify its url slug */
+			'rewrite'	=> array( 'slug' => 'announcements', 'with_front' => false ), /* you can specify its url slug */
 			'has_archive' => true, /* you can rename the slug here */
 			'capability_type' => 'post',
 			'hierarchical' => false,
@@ -47,24 +47,24 @@ function rc11_contributions() {
 
 
  register_taxonomy( 'contribution_type',
-    	array('contribution'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
+    	array('announcement'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
     	array('hierarchical' => true,     /* if this is true, it acts like categories */
     		'labels' => array(
-    			'name' => __( 'Contribution Types', 'rc11theme' ), /* name of the custom taxonomy */
-    			'singular_name' => __( 'Contribution Type', 'rc11theme' ), /* single taxonomy name */
-    			'search_items' =>  __( 'Search Contribution Types', 'rc11theme' ), /* search title for taxomony */
-    			'all_items' => __( 'All Contribution Types', 'rc11theme' ), /* all title for taxonomies */
+    			'name' => __( 'Announcement Types', 'rc11theme' ), /* name of the custom taxonomy */
+    			'singular_name' => __( 'Announcement Type', 'rc11theme' ), /* single taxonomy name */
+    			'search_items' =>  __( 'Search Announcement Types', 'rc11theme' ), /* search title for taxomony */
+    			'all_items' => __( 'All Announcement Types', 'rc11theme' ), /* all title for taxonomies */
     			'parent_item' => __( 'Parent Type', 'rc11theme' ), /* parent title for taxonomy */
     			'parent_item_colon' => __( 'Parent Type:', 'rc11theme' ), /* parent taxonomy title */
-    			'edit_item' => __( 'Edit Contribution Type', 'rc11theme' ), /* edit custom taxonomy title */
-    			'update_item' => __( 'Update Contribution Type', 'rc11theme' ), /* update title for taxonomy */
-    			'add_new_item' => __( 'Add New Contribution Type', 'rc11theme' ), /* add new title for taxonomy */
-    			'new_item_name' => __( 'New Contribution Type Name', 'rc11theme' ) /* name title for taxonomy */
+    			'edit_item' => __( 'Edit Announcement Type', 'rc11theme' ), /* edit custom taxonomy title */
+    			'update_item' => __( 'Update Announcement Type', 'rc11theme' ), /* update title for taxonomy */
+    			'add_new_item' => __( 'Add New Announcement Type', 'rc11theme' ), /* add new title for taxonomy */
+    			'new_item_name' => __( 'New Announcement Type Name', 'rc11theme' ) /* name title for taxonomy */
     		),
     		'show_admin_column' => true,
     		'show_ui' => true,
     		'query_var' => true,
-    		'rewrite' => array( 'slug' => 'contribution' ),
+    		'rewrite' => array( 'slug' => 'announcement_category' ),
     	)
     );
 
@@ -212,11 +212,11 @@ if(function_exists("register_field_group"))
 				'label' => 'Author(s)',
 				'name' => 'authors',
 				'type' => 'textarea',
-				'instructions' => 'Enter the name of the authors of this post',
+				'instructions' => 'Enter the authors as you would like them to appear on the website',
 				'default_value' => '',
 				'placeholder' => '',
 				'maxlength' => '',
-				'rows' => '',
+				'rows' => '4',
 				'formatting' => 'none',
 			),
 			array (
@@ -368,6 +368,15 @@ if(function_exists("register_field_group"))
 					'param' => 'taxonomy',
 					'operator' => '==',
 					'value' => '3',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+            array (
+				array (
+					'param' => 'taxonomy',
+					'operator' => '==',
+					'value' => '12',
 					'order_no' => 0,
 					'group_no' => 0,
 				),
@@ -862,15 +871,6 @@ if(function_exists("register_field_group"))
 					'group_no' => 1,
 				),
 			),
-			array (
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'post',
-					'order_no' => 0,
-					'group_no' => 2,
-				),
-			),
 		),
 		'options' => array (
 			'position' => 'acf_after_title',
@@ -1141,6 +1141,15 @@ if(function_exists("register_field_group"))
 					'group_no' => 8,
 				),
 			),
+            array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
 		),
 		'options' => array (
 			'position' => 'acf_after_title',
@@ -1149,6 +1158,71 @@ if(function_exists("register_field_group"))
 			),
 		),
 		'menu_order' => 11,
+	));
+    register_field_group(array (
+		'id' => 'acf_getting-started',
+		'title' => 'Getting Started',
+		'fields' => array (
+			array (
+				'key' => 'field_55a4e1ee99646',
+				'label' => 'Getting Started',
+				'name' => '',
+				'type' => 'message',
+				'message' => 'Select an <strong>"Announcement Type"</strong> from the choice on the right-hand side and then complete the form fields that are made available.
+
+
+	Any description you wish to include can be added to the main text editor (below the "Add Media" button)',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'announcement',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'acf_after_title',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => -1,
+	));
+    register_field_group(array (
+		'id' => 'acf_reminder',
+		'title' => 'Reminder',
+		'fields' => array (
+			array (
+				'key' => 'field_55a4ebea2fdb8',
+				'label' => 'Reminder',
+				'name' => '',
+				'type' => 'message',
+				'message' => 'Please remember to assign a <strong>Report Author</strong> (President or Secretary) from the box on the right-hand side before publishing.',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'report',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'acf_after_title',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => -1,
 	));
 }
 
