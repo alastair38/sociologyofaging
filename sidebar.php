@@ -37,7 +37,7 @@
 
     <?php $postType = get_post_type( $post );
 
-    if ($postType === contribution || is_tax('contribution_type') ) {
+    if ($postType === announcement || is_tax('contribution_type') ) {
         wp_list_categories( 'taxonomy=contribution_type&hide_empty=1&title_li=<h4>All Contributions</h4>' );
     }
     ?>
