@@ -356,7 +356,7 @@ if(function_exists("register_field_group"))
 				'label' => 'Date',
 				'name' => 'date',
 				'type' => 'date_picker',
-				'instructions' => 'Add the date for the conference or meeting',
+				'instructions' => 'Add the date for the conference, meeting or training',
 				'date_format' => 'yymmdd',
 				'display_format' => 'dd/mm/yy',
 				'first_day' => 1,

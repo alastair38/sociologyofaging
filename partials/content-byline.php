@@ -8,7 +8,7 @@ $user_role = get_the_author_meta( 'roles' );
 
 
 	Contributed on <?php the_time('F j, Y') ?> by <?php the_author_posts_link(); ?>. <?php the_category(', ') ?>
-    <?php if ($postType === contribution) {
+    <?php if ($postType === announcement) {
     echo get_the_term_list( $post->ID, 'contribution_type', 'Posted in ', ', ' );
     }
     if ($postType === report) {
