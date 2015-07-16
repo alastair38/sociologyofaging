@@ -482,9 +482,9 @@ function add_logout_link( $items, $args )
         if(is_user_logged_in())
         {
             $items .= '<li class="has-dropdown"><a href="#">Your Account</a>';
-            $items .= '<ul class="dropdown"><li><a href="' . admin_url() . 'post-new.php">New Article</a></li>';
-            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=announcement">New Announcement</a></li>';
-            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=report">New Report</a></li>';
+            $items .= '<ul class="dropdown"><li><a href="' . admin_url() . 'post-new.php">Add News/Article</a></li>';
+            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=announcement">Add Member Announcement</a></li>';
+            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=report">Add President/Secretary Report</a></li>';
             $items .= '<li><a href="'. get_edit_user_link() .'">Edit Profile</a></li>';
             $items .= '<li class="logout"><a href="'. wp_logout_url() .'">Log Out</a></li>';
 

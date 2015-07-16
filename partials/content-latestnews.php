@@ -25,6 +25,6 @@
 
 <?php endforeach; ?>
 
-</div>
+</ul>
 <?php endif; ?>
 

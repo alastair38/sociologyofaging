@@ -19,7 +19,7 @@
 		    <?php
 $page1 = get_page_by_title( 'Committee' );
 $page2 = get_page_by_title( 'About' );
-$page3 = get_page_by_title( 'Meetings' );
+$page3 = get_page_by_title( 'RC-11 Meetings' );
 ?>
 
 <li class="large-4 medium-4 small-12 columns"><a href="<?php echo get_page_link($page2->ID); ?>"><?php echo get_the_title($page2->ID);?></a></li>

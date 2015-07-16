@@ -7033,16 +7033,16 @@ HOME PAGE
     font-size: 100%;
     line-height: 1.25em;
     color: #FFFFFF; }
-.home aside {
+.home #homeAside {
   padding: 2em 1em;
   height: auto;
   margin-top: -3em;
   background: rgba(68, 68, 68, 0.9); }
-  .home aside p {
+  .home #homeAside p {
     font-size: 120%;
     line-height: 2em; }
 
-ul#homeLinks {
+ul#homeLinks, ul#homeSideLinks {
   text-align: center;
   margin-left: 0; }
 
@@ -7062,6 +7062,23 @@ ul#homeLinks li {
       background: transparent;
       color: #FFFFFF;
       text-decoration: none; }
+
+ul#homeSideLinks li {
+  list-style-type: none; }
+  ul#homeSideLinks li a {
+    display: block;
+    background: transparent;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 110%;
+    width: 100%;
+    padding: .25em;
+    margin-bottom: .5em;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    transition: 350ms; }
+    ul#homeSideLinks li a:hover, ul#homeSideLinks li a:focus {
+      color: #555555;
+      background: rgba(255, 255, 255, 0.9); }
 
 .home #latestNewsTitle {
   text-align: center;
@@ -7694,12 +7711,12 @@ MEDIUM
     .home article p {
       font-size: 120%;
       line-height: 2em; }
-  .home aside {
+  .home #homeAside {
     padding: 2em 1em;
     height: auto;
     background: rgba(68, 68, 68, 0.9);
     margin-top: 0em; }
-    .home aside p {
+    .home #homeAside p {
       font-size: 120%;
       line-height: 2em; }
 
@@ -7814,12 +7831,12 @@ you can add resource intensive styles.
     .home article p {
       font-size: 120%;
       line-height: 2em; }
-  .home aside {
+  .home #homeAside {
     padding: 2em 1em;
     height: 27em;
     background: rgba(68, 68, 68, 0.5);
     margin-top: 0em; }
-    .home aside p {
+    .home #homeAside p {
       font-size: 120%;
       line-height: 2em; }
 

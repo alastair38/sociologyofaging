@@ -1,4 +1,4 @@
-<div class="large-12 columns show-for-medium-up">
+<div class="large-12 columns show-for-large-up">
 	<div class="fixed contain-to-grid">
 		<nav class="top-bar" role="navigation" data-topbar>
  <h1 class="site-title"><i class="fi-torsos-all"></i><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></h1>

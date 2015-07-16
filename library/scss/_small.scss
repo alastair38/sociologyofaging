@@ -374,7 +374,7 @@ HOME PAGE
         color: $white;
     }
     }
-    aside {
+    #homeAside {
     padding: 2em 1em;
     height: auto;
     margin-top: -3em;
@@ -388,7 +388,7 @@ HOME PAGE
     }
 }
 
-ul#homeLinks {
+ul#homeLinks, ul#homeSideLinks {
     text-align: center;
     margin-left: 0;
 }
@@ -412,7 +412,27 @@ ul#homeLinks li {
         text-decoration: none;
     }
     }
+}
 
+ul#homeSideLinks li {
+    list-style-type: none;
+    a {
+    display: block;
+    background: transparent;
+    color: $white;
+    text-decoration: none;
+    font-size: 110%; //large screens 130%
+    width: 100%;
+    padding: .25em;
+    margin-bottom: .5em; //1em on large screens
+    border: 1px solid rgba(255,255,255,.9);
+    transition: 350ms;
+    &:hover,
+    &:focus {
+        color: $charcoal;
+        background: rgba(255,255,255,.9);
+    }
+    }
 }
 
 .home {
