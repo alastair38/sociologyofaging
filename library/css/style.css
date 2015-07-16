@@ -7294,6 +7294,11 @@ CATEGORY / TAXONOMY PAGES
   margin-bottom: 1em;
   border-bottom: 1px solid #AAAAAA; }
 
+.article-footer #pubDetails {
+  border: 1px solid #006080;
+  padding: 5px;
+  border-radius: 2px; }
+
 #sidebar1 h4 {
   margin-top: 1em; }
 

@@ -7,6 +7,7 @@
 			<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 			</h2>
 			<?php get_template_part( 'partials/content', 'byline' ); ?>
+
 		</header> <!-- end article header -->
 
 		<section class="entry-content contribution-details" itemprop="articleBody">
@@ -57,7 +58,38 @@
 		</section> <!-- end article section -->
 
 		<footer class="article-footer">
-	    	<p class="tags"><?php the_tags('<span class="tags-title">' . __('Tags:', 'jointstheme') . '</span> ', ', ', ''); ?></p>
+        <?php
+ $pubType = get_field('publication_type');
+        $authors = get_field('authors');
+        $bookName = get_field('book_name');
+        $yearPub = ' (' . get_field('year_of_publication') . ').';
+        $placePub = get_field('place_of_publication') . ': ';
+        $publisher = get_field('publisher');
+        $journal = get_field('journal_name');
+        $volume = get_field('volume');
+        $issue = '(' . get_field('issue') . ')';
+        $pageNumbers = get_field('page_numbers');
+        if ($pageNumbers) {
+        $pageNos = ', pp.' . $pageNumbers;
+        }
+        $journalNos = ':' . get_field('page_numbers');
+        $title = get_the_title();
+
+        if($pubType === 'Book') {
+        echo '<div id="pubDetails">Citation: ' . $authors . ' ' . $yearPub . '<em>' . $title . '</em>, ' . $placePub . $publisher . '</div>';
+        }
+
+        if($pubType === 'Book Chapter') {
+        echo '<div id="pubDetails">Citation: ' . $authors . ', Eds' . $yearPub . '<em>' . $title . '</em>, ' . $placePub . $publisher . $pageNos . '</div>';
+        }
+
+        if($pubType === 'Journal') {
+        echo  '<div id="pubDetails">Citation ' . $authors . $yearPub . '<em>' . $title . '</em>. ' . $journal . '. ' . $volume . $issue . $journalNos . '</div>';
+        }
+
+         if($pubType === 'Report') {
+        echo  '<div id="pubDetails">Citation: ' . $authors . ' ' . $yearPub . '<em>' . $title . '</em>, ' . $placePub . $publisher . '</div>';
+        }?>
 		</footer> <!-- end article footer -->
 
 	</article> <!-- end article -->
