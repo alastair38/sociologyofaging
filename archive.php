@@ -22,7 +22,7 @@
 					    ?>
                         <?php get_template_part( 'partials/content', 'author' ); ?>
 
-					    <?php } elseif (is_post_type_archive('contribution')) { ?>
+					    <?php } elseif (is_post_type_archive('announcement')) { ?>
 						    <h1 id="taxHeader">
 	    						<span>Announcements</span>
 						    </h1>

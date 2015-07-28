@@ -479,16 +479,36 @@ function add_logout_link( $items, $args )
 {
     if($args->theme_location == 'main-nav')
     {
-        if(is_user_logged_in())
+        if (current_user_can('administrator')||current_user_can('president')||current_user_can('secretary') && is_user_logged_in())
         {
             $items .= '<li class="has-dropdown"><a href="#">Your Account</a>';
             $items .= '<ul class="dropdown"><li><a href="' . admin_url() . 'post-new.php">Add News/Article</a></li>';
             $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=announcement">Add Member Announcement</a></li>';
             $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=report">Add President/Secretary Report</a></li>';
+            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=page">Add RC-11 Meeting</a></li>';
             $items .= '<li><a href="'. get_edit_user_link() .'">Edit Profile</a></li>';
             $items .= '<li class="logout"><a href="'. wp_logout_url() .'">Log Out</a></li>';
 
-        } else {
+        } elseif (current_user_can('committee_member') && is_user_logged_in())
+        {
+            $items .= '<li class="has-dropdown"><a href="#">Your Account</a>';
+            $items .= '<ul class="dropdown"><li><a href="' . admin_url() . 'post-new.php">Add News/Article</a></li>';
+            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=announcement">Add Member Announcement</a></li>';
+            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=page">Add RC-11 Meeting</a></li>';
+            $items .= '<li><a href="'. get_edit_user_link() .'">Edit Profile</a></li>';
+            $items .= '<li class="logout"><a href="'. wp_logout_url() .'">Log Out</a></li>';
+
+        }
+        elseif (current_user_can('rc_member') && is_user_logged_in())
+        {
+            $items .= '<li class="has-dropdown"><a href="#">Your Account</a>';
+            $items .= '<ul class="dropdown"><li><a href="' . admin_url() . 'post-new.php">Add News/Article</a></li>';
+            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=announcement">Add Member Announcement</a></li>';
+            $items .= '<li><a href="'. get_edit_user_link() .'">Edit Profile</a></li>';
+            $items .= '<li class="logout"><a href="'. wp_logout_url() .'">Log Out</a></li>';
+
+        }
+        else {
             $items .= '<li><a href="'. wp_login_url() .'">Log In</a></li>';
         }
     }
@@ -511,4 +531,77 @@ function login_redirect_example( $redirect_to, $request, $user ) {
     }
     return;
 }
+
+/**
+ * Change the post menu to article
+ */
+function change_post_menu_text() {
+  global $menu;
+  global $submenu;
+
+  // Change menu item
+  $menu[5][0] = 'News + Articles';
+
+  // Change post submenu
+  $submenu['edit.php'][5][0] = 'News + Articles';
+  $submenu['edit.php'][10][0] = 'Add News + Articles';
+  $submenu['edit.php'][16][0] = 'News + Articles Tags';
+}
+
+add_action( 'admin_menu', 'change_post_menu_text' );
+
+
+
+/**
+ * Change the post type labels
+ */
+function change_post_type_labels() {
+  global $wp_post_types;
+
+  // Get the post labels
+  $postLabels = $wp_post_types['post']->labels;
+  $postLabels->name = 'News + Articles';
+  $postLabels->singular_name = 'News + Articles';
+  $postLabels->add_new = 'Add News + Articles';
+  $postLabels->add_new_item = 'Add News + Article';
+  $postLabels->edit_item = 'Edit News + Articles';
+  $postLabels->new_item = 'News + Articles';
+  $postLabels->view_item = 'View News + Articles';
+  $postLabels->search_items = 'Search News + Articles';
+  $postLabels->not_found = 'No News + Articles found';
+  $postLabels->not_found_in_trash = 'No News + Articles found in Trash';
+}
+add_action( 'init', 'change_post_type_labels' );
+
+function change_page_type_labels() {
+  global $wp_post_types;
+
+  // Get the post labels
+  $postLabels = $wp_post_types['page']->labels;
+  $postLabels->name = 'Pages + Meetings';
+  $postLabels->singular_name = 'Pages + Meetings';
+  $postLabels->add_new = 'Add Pages + Meetings';
+  $postLabels->add_new_item = 'Add Pages + Meetings';
+  $postLabels->edit_item = 'Edit Pages + Meetings';
+  $postLabels->new_item = 'Pages + Meetings';
+  $postLabels->view_item = 'View Pages + Meetings';
+  $postLabels->search_items = 'Search Pages + Meetings';
+  $postLabels->not_found = 'No Pages + Meetings found';
+  $postLabels->not_found_in_trash = 'No Pages + Meetings found in Trash';
+}
+add_action( 'init', 'change_page_type_labels' );
+
+// remove links/menus from the admin bar
+function mytheme_admin_bar_render() {
+	global $wp_admin_bar;
+	$wp_admin_bar->remove_menu('wp-logo');          // Remove the WordPress logo
+    $wp_admin_bar->remove_menu('about');            // Remove the about WordPress link
+    $wp_admin_bar->remove_menu('wporg');            // Remove the WordPress.org link
+    $wp_admin_bar->remove_menu('documentation');    // Remove the WordPress documentation link
+    $wp_admin_bar->remove_menu('support-forums');   // Remove the support forums link
+    $wp_admin_bar->remove_menu('feedback');         // Remove the feedback link
+    $wp_admin_bar->remove_menu('comments');         // Remove the comments link
+    $wp_admin_bar->remove_menu('new-content');      // Remove the cont
+}
+add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
 ?>

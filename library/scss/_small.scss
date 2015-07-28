@@ -714,6 +714,7 @@ CATEGORY / TAXONOMY PAGES
     border: 1px solid $primary-color;
     padding: 5px;
     border-radius: 2px;
+    margin-bottom: 1em;
 }
 
 
@@ -1273,8 +1274,14 @@ SIDEBARS & ASIDES
 .sidebar {
 }
 
-	#searchsubmit {
-	}
+#searchform {
+    margin-top: 2em;
+}
+
+#searchsubmit {
+    width: 100% !important;
+    padding: 5px;
+}
 
 	.widgettitle {}
 

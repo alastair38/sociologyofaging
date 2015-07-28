@@ -1224,6 +1224,37 @@ if(function_exists("register_field_group"))
 		),
 		'menu_order' => -1,
 	));
+    register_field_group(array (
+		'id' => 'acf_note-on-adding-new-rc-11-meetings',
+		'title' => 'Note on Adding New RC-11 Meetings',
+		'fields' => array (
+			array (
+				'key' => 'field_55b77d4ba8c45',
+				'label' => 'New Meeting',
+				'name' => '',
+				'type' => 'message',
+				'message' => 'If you are adding a new meeting please select <strong>RC-11 Meetings</strong> from the Page Attributes (<em>Parent - select box</em>) on the right-hand side.',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'page',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'acf_after_title',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
 }
 
 

@@ -29,7 +29,7 @@ $thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail-size', true);
 
                         <?php get_template_part( 'partials/content', 'latestnews' ); ?>
 
-                        <?php $page4 = get_page_by_title( 'Reports' );
+                        <?php $page4 = get_page_by_title( 'RC-11 Reports' );
                         $page5 = get_page_by_title( 'News + Articles' );
 ?>
 <ul id="homeSideLinks">

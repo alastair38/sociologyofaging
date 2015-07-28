@@ -76,19 +76,19 @@
         $title = get_the_title();
 
         if($pubType === 'Book') {
-        echo '<div id="pubDetails">Citation: ' . $authors . ' ' . $yearPub . '<em>' . $title . '</em>, ' . $placePub . $publisher . '</div>';
+        echo '<div id="pubDetails">' . $authors . ' ' . $yearPub . '<em>' . $title . '</em>, ' . $placePub . $publisher . '</div>';
         }
 
         if($pubType === 'Book Chapter') {
-        echo '<div id="pubDetails">Citation: ' . $authors . ', Eds' . $yearPub . '<em>' . $title . '</em>, ' . $placePub . $publisher . $pageNos . '</div>';
+        echo '<div id="pubDetails">' . $authors . ', Eds' . $yearPub . '<em>' . $title . '</em>, ' . $placePub . $publisher . $pageNos . '</div>';
         }
 
         if($pubType === 'Journal') {
-        echo  '<div id="pubDetails">Citation ' . $authors . $yearPub . '<em>' . $title . '</em>. ' . $journal . '. ' . $volume . $issue . $journalNos . '</div>';
+        echo  '<div id="pubDetails">' . $authors . $yearPub . '<em>' . $title . '</em>. ' . $journal . '. ' . $volume . $issue . $journalNos . '</div>';
         }
 
          if($pubType === 'Report') {
-        echo  '<div id="pubDetails">Citation: ' . $authors . ' ' . $yearPub . '<em>' . $title . '</em>, ' . $placePub . $publisher . '</div>';
+        echo  '<div id="pubDetails">' . $authors . ' ' . $yearPub . '<em>' . $title . '</em>, ' . $placePub . $publisher . '</div>';
         }?>
 		</footer> <!-- end article footer -->
 
@@ -99,7 +99,7 @@
 <?php joints_page_navi(); ?>
 
 <?php else : ?>
-
+	<?php get_template_part( 'partials/content', 'missing' ); ?>
 <?php endif; ?>
 </div>
 <div class="large-4 medium-4 small-12 columns">
