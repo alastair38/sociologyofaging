@@ -7067,8 +7067,8 @@ ul#homeSideLinks li {
   list-style-type: none; }
   ul#homeSideLinks li a {
     display: block;
-    background: transparent;
-    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.9);
+    color: #555555;
     text-decoration: none;
     font-size: 110%;
     width: 100%;
@@ -7077,8 +7077,8 @@ ul#homeSideLinks li {
     border: 1px solid rgba(255, 255, 255, 0.9);
     transition: 350ms; }
     ul#homeSideLinks li a:hover, ul#homeSideLinks li a:focus {
-      color: #555555;
-      background: rgba(255, 255, 255, 0.9); }
+      color: #FFFFFF;
+      background: transparent; }
 
 .home #latestNewsTitle {
   text-align: center;
@@ -7243,12 +7243,14 @@ h2.authorPosts {
       text-align: center;
       list-style-type: none;
       font-size: 115%;
-      background: #555555;
-      margin: 10px 0; }
+      background: #006080;
+      margin: 10px 0;
+      transition: 350ms; }
+      .authorInfo ul li:hover, .authorInfo ul li:focus {
+        background: #555555; }
       .authorInfo ul li a {
-        color: #FFFFFF; }
-        .authorInfo ul li a:hover, .authorInfo ul li a:focus {
-          color: #f2f071; }
+        color: #FFFFFF;
+        display: block; }
   .authorInfo h2 {
     margin-top: 100px;
     text-align: center;
@@ -7279,9 +7281,22 @@ ul#singleAuthor {
 .authorInfo span {
   display: block;
   text-align: center; }
-  .authorInfo span#member {
+  .authorInfo span.member {
     text-transform: uppercase;
     font-weight: 400; }
+
+span.profileLink {
+  background: #006080;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  transition: 350ms; }
+  span.profileLink:hover, span.profileLink :focus {
+    background: #555555; }
+  span.profileLink a {
+    color: #FFFFFF;
+    display: block; }
 
 /*********************
 CATEGORY / TAXONOMY PAGES
