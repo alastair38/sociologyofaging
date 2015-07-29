@@ -418,8 +418,8 @@ ul#homeSideLinks li {
     list-style-type: none;
     a {
     display: block;
-    background: transparent;
-    color: $white;
+    background: rgba(255,255,255,.9);
+    color: $charcoal;
     text-decoration: none;
     font-size: 110%; //large screens 130%
     width: 100%;
@@ -429,8 +429,8 @@ ul#homeSideLinks li {
     transition: 350ms;
     &:hover,
     &:focus {
-        color: $charcoal;
-        background: rgba(255,255,255,.9);
+        color: $white;
+        background: transparent;
     }
     }
 }
@@ -642,14 +642,16 @@ h2.authorPosts {
             text-align: center;
             list-style-type: none;
             font-size: 115%;
-            background: $charcoal;
+            background: $primary-color;
             margin: 10px 0;
-            a {
-            color: $white;
+            transition: 350ms;
             &:hover,
             &:focus {
-                color: $contrast-color;
+                background: $charcoal;
             }
+            a {
+            color: $white;
+            display: block;
             }
         }
     }
@@ -690,9 +692,25 @@ ul#singleAuthor {
 .authorInfo span {
     display: block;
     text-align: center;
-    &#member {
+    &.member {
         text-transform: uppercase;
         font-weight: 400;
+    }
+}
+
+span.profileLink {
+    background: $primary-color;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    transition: 350ms;
+    &:hover,:focus {
+        background: $charcoal;
+    }
+    & a {
+        color: $white;
+        display: block;
     }
 }
 

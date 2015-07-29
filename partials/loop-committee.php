@@ -12,94 +12,133 @@
 
 <?php endwhile; endif; ?>
 
+<?php
+
+$args = array(
+    'orderby' => 'rc11Role',
+    'order' => 'ASC',
+	'meta_query' => array(
+		'relation' => 'OR',
+		array(
+			'key'     => 'rc11Role',
+			'value'   => 'President',
+			'compare' => '='
+		),
+        array(
+			'key'     => 'rc11Role',
+			'value'   => 'Vice President',
+			'compare' => '='
+		)
+	)
+ );
+$wp_user_query = new WP_User_Query( $args );
+
+
+
+// Get the results
+$authors = $wp_user_query->get_results();
+
+// Check for results
+if (!empty($authors)) {
+    // loop trough each author
+    foreach ($authors as $author)
+    {
+        // get all the user's data
+        $author_info = get_userdata($author->ID);
+        $organisation = get_user_meta($author->ID, 'organisation', true);
+        $jobTitle = get_user_meta($author->ID, 'jobTitle', true);
+        $rc11Role = get_user_meta($author->ID, 'rc11Role', true);
+        echo '<div class="author large-3 medium-6 small-12 columns end"><div class="authorInfo"><h2 class="authorName"><a href="' .get_author_posts_url( $author->ID ). '"> '.$author_info->display_name.'</a></h2><div class="authorAvatar">' . get_avatar( $author_info->user_email, '80' ) . '</div><span>' . $jobTitle . '</span><span>' . $organisation . '</span><span class="member">' . $rc11Role . '</span><span class="profileLink"><a href="' .get_author_posts_url( $author->ID ). '">View Profile</a></span></div></div>';
+    }
+} else {
+}?>
 
 <?php
-$allUsers = get_users('orderby=meta_value&order=ASC&meta_key=rc11Role');
 
-$users = array();
+$args = array(
+    'orderby' => 'rc11Role',
+    'order' => 'ASC',
+	'meta_query' => array(
+		'relation' => 'OR',
+		array(
+			'key'     => 'rc11Role',
+			'value'   => 'Secretary',
+			'compare' => '='
+		),
+        array(
+			'key'     => 'rc11Role',
+			'value'   => 'Treasurer',
+			'compare' => '='
+		)
+	)
+ );
+$wp_user_query = new WP_User_Query( $args );
 
-// Remove subscribers from the list as they won't write any articles
-foreach($allUsers as $currentUser)
-{
-	if(in_array( 'president', $currentUser->roles ) || in_array( 'secretary', $currentUser->roles ) || in_array( 'editor', $currentUser->roles ) )
-	{
-		$users[] = $currentUser;
-	}
-}
-?>
+
+
+// Get the results
+$authors = $wp_user_query->get_results();
+
+// Check for results
+if (!empty($authors)) {
+    // loop trough each author
+    foreach ($authors as $author)
+    {
+        // get all the user's data
+        $author_info = get_userdata($author->ID);
+        $organisation = get_user_meta($author->ID, 'organisation', true);
+        $jobTitle = get_user_meta($author->ID, 'jobTitle', true);
+        $rc11Role = get_user_meta($author->ID, 'rc11Role', true);
+        echo '<div class="author large-3 medium-6 small-12 columns end"><div class="authorInfo"><h2 class="authorName"><a href="' .get_author_posts_url( $author->ID ). '"> '.$author_info->display_name.'</a></h2><div class="authorAvatar">' . get_avatar( $author_info->user_email, '80' ) . '</div><span>' . $jobTitle . '</span><span>' . $organisation . '</span><span class="member">' . $rc11Role . '</span><span class="profileLink"><a href="' .get_author_posts_url( $author->ID ). '">View Profile</a></span></div></div>';
+    }
+} else {
+}?>
 
 <?php
-foreach($users as $user)
-{
-	?>
-	<div class="author large-3 medium-6 small-12 columns end">
 
-		<div class="authorInfo">
+$args = array(
+    'orderby' => 'rc11Role',
+    'order' => 'DESC',
+	'meta_query' => array(
+		'relation' => 'OR',
+		array(
+			'key'     => 'rc11Role',
+			'value'   => 'Newsletter Editor',
+			'compare' => '='
+		),
+        array(
+			'key'     => 'rc11Role',
+			'value'   => 'Committee Member',
+			'compare' => '='
+		)
+	)
+ );
+$wp_user_query = new WP_User_Query( $args );
 
-            <h2 class="authorName"><a href="<?php echo get_author_posts_url( $user->ID ); ?>"><?php echo $user->display_name; ?></a></h2>
-            <div class="authorAvatar">
-          <?php echo get_avatar( $user->user_email, '80' ); ?>
-        </div>
-
-            <?php
-                $jobTitle = get_user_meta($user->ID, 'jobTitle', true);
-	if($jobTitle != '')
-	{
-		echo '<span>' . $jobTitle . '</span>';
-	}
-    ?>
 
 
-             <?php
-                $organisation = get_user_meta($user->ID, 'organisation', true);
-	if($organisation != '')
-	{
-		echo '<span>' . $organisation . '</span>';
-	}
-    ?>
-     <?php
-                $rc11Role = get_user_meta($user->ID, 'rc11Role', true);
-	if($organisation != '')
-	{
-		echo '<span id="member">' . $rc11Role . '</span>';
-	}
-    ?>
-    <?php
-            if ($curauth->rc11Role) {
-               echo "<span id='member'>" . $curauth->rc11Role . "</span>";
-            }?>
+// Get the results
+$authors = $wp_user_query->get_results();
 
-			<p class="socialIcons">
+// Check for results
+if (!empty($authors)) {
+    // loop trough each author
+    foreach ($authors as $author)
+    {
+        // get all the user's data
+        $author_info = get_userdata($author->ID);
+        $organisation = get_user_meta($author->ID, 'organisation', true);
+        $jobTitle = get_user_meta($author->ID, 'jobTitle', true);
+        $rc11Role = get_user_meta($author->ID, 'rc11Role', true);
+        echo '<div class="author large-3 medium-6 small-12 columns end"><div class="authorInfo"><h2 class="authorName"><a href="' .get_author_posts_url( $author->ID ). '"> '.$author_info->display_name.'</a></h2><div class="authorAvatar">' . get_avatar( $author_info->user_email, '80' ) . '</div><span>' . $jobTitle . '</span><span>' . $organisation . '</span><span class="member">' . $rc11Role . '</span><span class="profileLink"><a href="' .get_author_posts_url( $author->ID ). '">View Profile</a></span></div></div>';
+    }
+} else {
+}?>
 
-<ul>
-	<?php
-	$email = get_the_author_meta( 'user_email', $user->id );
-	if($user->user_email != '')
-	{
-		printf('<li><a href="mailto:' . $email . '" target="_blank"><i class="fi-mail"></i> Email</a></li>');
-	}
 
-	$twitter = get_user_meta($user->ID, 'twitter', true);
-	if($twitter != '')
-	{
-		printf('<li><a href="%s" target="_blank">%s</a></li>', $twitter, '<i class="fi-social-twitter"></i> Twitter');
-	}
-
-	$linkedin = get_user_meta($user->ID, 'linkedin', true);
-	if($linkedin != '')
-	{
-		printf('<li><a href="%s" target="_blank">%s</a></li>', $linkedin, '<i class="fi-social-linkedin"></i> LinkedIn');
-	}
-?>
-</ul>
-</p>
-
-            </ p>
 		</div>
 	</div>
-<?php
-}
-?>
+
 
 
 

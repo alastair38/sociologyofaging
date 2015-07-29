@@ -2,7 +2,7 @@
                             <?php
                         $newsitems = get_posts(array(
                             'post_type' => 'announcement',
-                            'posts_per_page' => 4
+                            'posts_per_page' => 3
                         ));
                         ?>
 
@@ -13,7 +13,7 @@
 
 
                             <?php $title = get_the_title( $newsitem->ID );
-                            $trimmedTitle = wp_trim_words( $title, $num_words = 5, $more = '...' );?>
+                            $trimmedTitle = wp_trim_words( $title, $num_words = 4, $more = '...' );?>
                             <li><a href="<?php echo get_the_permalink( $newsitem->ID ); ?>">
                             <?php if ( has_post_thumbnail($newsitem->ID) ) {
                             echo get_the_post_thumbnail($newsitem->ID, array( 50, 50));
