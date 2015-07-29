@@ -23,16 +23,10 @@ $role = get_user_role($curauth->ID);
             if ($curauth->organisation) {
                 echo '<span>' . $curauth->organisation . '</span>';
             }?>
-            <?php if ($role === committee_member ){
-            echo "<span id='member'>Committee Member</span>";
-            } elseif ($role === president ) {
-             echo "<span id='member'>President + Committee Member</span>";
-            } elseif ($role === secretary) {
-            echo "<span id='member'>Secretary + Committee Member</span>";
-            } else {
-            echo "<span id='member'>Standard Member</span>";
-            }
-?>
+            <?php
+            if ($curauth->rc11Role) {
+               echo "<span id='member'>" . $curauth->rc11Role . "</span>";
+            }?>
 
 			<p class="authorDescription"><?php echo $curauth->description; ?></ p>
 			<p class="socialIcons">
@@ -75,7 +69,7 @@ $role = get_user_role($curauth->ID);
 
 <?php
 
-if ($role != rc_member ){?>
+if ($role != author ){?>
 
     <h3>Other Committee Members</h3>
 
@@ -83,7 +77,7 @@ if ($role != rc_member ){?>
     $id = $curauth->ID;
     $args = array(
 	'blog_id'      => $GLOBALS['blog_id'],
-	'role'         => 'committee_member',
+	'role'         => 'editor',
 	'exclude'      => array($id),
 	'orderby'      => 'display_name',
 	'order'        => 'ASC',

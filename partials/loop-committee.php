@@ -11,15 +11,17 @@
 </article>
 
 <?php endwhile; endif; ?>
+
+
 <?php
-$allUsers = get_users('orderby=meta_value&order=ASC&meta_key=last_name');
+$allUsers = get_users('orderby=meta_value&order=ASC&meta_key=rc11Role');
 
 $users = array();
 
 // Remove subscribers from the list as they won't write any articles
 foreach($allUsers as $currentUser)
 {
-	if(in_array( 'president', $currentUser->roles ) || in_array( 'secretary', $currentUser->roles ) || in_array( 'committee_member', $currentUser->roles ) )
+	if(in_array( 'president', $currentUser->roles ) || in_array( 'secretary', $currentUser->roles ) || in_array( 'editor', $currentUser->roles ) )
 	{
 		$users[] = $currentUser;
 	}
@@ -55,6 +57,17 @@ foreach($users as $user)
 		echo '<span>' . $organisation . '</span>';
 	}
     ?>
+     <?php
+                $rc11Role = get_user_meta($user->ID, 'rc11Role', true);
+	if($organisation != '')
+	{
+		echo '<span id="member">' . $rc11Role . '</span>';
+	}
+    ?>
+    <?php
+            if ($curauth->rc11Role) {
+               echo "<span id='member'>" . $curauth->rc11Role . "</span>";
+            }?>
 
 			<p class="socialIcons">
 

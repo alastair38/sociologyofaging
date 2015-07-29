@@ -187,6 +187,15 @@ function fb_add_custom_user_profile_fields( $user ) {
 	<table class="form-table">
         <tr>
 			<th>
+				<label for="rc11Role"><?php _e('RC-11 Role', 'your_textdomain'); ?>
+			</label></th>
+			<td>
+                <input type="text" name="rc11Role" id="rc11Role" value="<?php echo esc_attr( get_the_author_meta( 'rc11Role', $user->ID ) ); ?>" class="regular-text"/><br />
+				<span class="description"><?php _e('Please enter your role within RC-11 eg: president, committee member.', 'your_textdomain'); ?></span>
+			</td>
+		</tr>
+        <tr>
+			<th>
 				<label for="jobTitle"><?php _e('Job Title', 'your_textdomain'); ?>
 			</label></th>
 			<td>
@@ -233,6 +242,7 @@ function fb_save_custom_user_profile_fields( $user_id ) {
 	update_usermeta( $user_id, 'organisation', $_POST['organisation'] );
 	update_usermeta( $user_id, 'twitter', $_POST['twitter'] );
 	update_usermeta( $user_id, 'linkedin', $_POST['linkedin'] );
+	update_usermeta( $user_id, 'rc11Role', $_POST['rc11Role'] );
 }
 
 add_action( 'show_user_profile', 'fb_add_custom_user_profile_fields' );
@@ -274,6 +284,7 @@ function get_user_role($id)
 
 //Add RC11 Member and Committee Member role - both with identical editing rights, but separating the roles allows for the Committee Page Template to work
 
+
 $result = add_role( 'president', __(
 
 'President' ),
@@ -282,7 +293,11 @@ array(
 
 'read' => true, // true allows this capability
 'edit_posts' => true, // Allows user to edit their own posts
+'edit_post' => true, // Allows user to edit their own posts
+'edit_published_posts' => true,
 'edit_pages' => true, // Allows user to edit pages
+'edit_published_pages' => true,
+'edit_others_pages' => true,
 'publish_pages' => true,
 'edit_others_posts' => true, // Allows user to edit others posts not just their own
 'create_posts' => true, // Allows user to create new posts
@@ -294,6 +309,8 @@ array(
 'update_core' => false // user cant perform core updates
 
 ));
+
+
 
 $result = add_role( 'secretary', __(
 
@@ -303,7 +320,10 @@ array(
 
 'read' => true, // true allows this capability
 'edit_posts' => true, // Allows user to edit their own posts
+'edit_published_posts' => true,
 'edit_pages' => true, // Allows user to edit pages
+'edit_published_pages' => true,
+'edit_others_pages' => true,
 'publish_pages' => true,
 'edit_others_posts' => true, // Allows user to edit others posts not just their own
 'create_posts' => true, // Allows user to create new posts
@@ -316,57 +336,96 @@ array(
 
 ));
 
-$result = add_role( 'committee_member', __(
+function change_editor_name() {
+    global $wp_roles;
 
-'Committee Member' ),
+    if ( ! isset( $wp_roles ) )
+        $wp_roles = new WP_Roles();
 
-array(
+    //You can list all currently available roles like this...
+    //$roles = $wp_roles->get_names();
+    //print_r($roles);
 
-'read' => true, // true allows this capability
-'edit_posts' => true, // Allows user to edit their own posts
-'edit_pages' => true, // Allows user to edit pages
-'publish_pages' => true,
-'edit_others_posts' => true, // Allows user to edit others posts not just their own
-'create_posts' => true, // Allows user to create new posts
-'manage_categories' => false, // Allows user to manage post categories
-'publish_posts' => true, // Allows the user to publish, otherwise posts stays in draft mode
-'edit_themes' => false, // false denies this capability. User can’t edit your theme
-'install_plugins' => false, // User cant add new plugins
-'update_plugin' => false, // User can’t update any plugins
-'update_core' => false // user cant perform core updates
+    //You can replace "administrator" with any other role "editor", "author", "contributor" or "subscriber"...
+    $wp_roles->roles['editor']['name'] = 'Committee Member';
+    $wp_roles->role_names['editor'] = 'Committee Member';
+}
+add_action('init', 'change_editor_name');
 
-));
+function change_role_name() {
+    global $wp_roles;
 
-$result = add_role( 'rc_member', __(
+    if ( ! isset( $wp_roles ) )
+        $wp_roles = new WP_Roles();
 
-'RC11 Member' ),
+    //You can list all currently available roles like this...
+    //$roles = $wp_roles->get_names();
+    //print_r($roles);
 
-array(
+    //You can replace "administrator" with any other role "editor", "author", "contributor" or "subscriber"...
+    $wp_roles->roles['author']['name'] = 'RC-11 Member';
+    $wp_roles->role_names['author'] = 'RC-11 Member';
+}
+add_action('init', 'change_role_name');
 
-'read' => true, // true allows this capability
-'edit_posts' => true, // Allows user to edit their own posts
-'edit_pages' => false, // Allows user to edit pages
-'publish_pages' => false,
-'edit_others_posts' => false, // Allows user to edit others posts not just their own
-'create_posts' => true, // Allows user to create new posts
-'manage_categories' => false, // Allows user to manage post categories
-'publish_posts' => true, // Allows the user to publish, otherwise posts stays in draft mode
-'edit_themes' => false, // false denies this capability. User can’t edit your theme
-'install_plugins' => false, // User cant add new plugins
-'update_plugin' => false, // User can’t update any plugins
-'update_core' => false // user cant perform core updates
 
-));
+// adding custom capabilities for the report CPT allow president, secretary and administrator to publish, delete etc.
+function add_theme_caps() {
+    // gets the president role
+    $admins = get_role( 'president' );
+
+    $admins->add_cap( 'edit_report' );
+    $admins->add_cap( 'edit_reports' );
+    $admins->add_cap( 'edit_others_reports' );
+    $admins->add_cap( 'publish_reports' );
+    $admins->add_cap( 'read_report' );
+    $admins->add_cap( 'read_private_reports' );
+    $admins->add_cap( 'delete_reports' );
+    $admins->add_cap( 'edit_published_reports' );
+}
+add_action( 'admin_init', 'add_theme_caps');
+
+function add_sectheme_caps() {
+    // gets the secretary role
+    $admins = get_role( 'secretary' );
+
+    $admins->add_cap( 'edit_report' );
+    $admins->add_cap( 'edit_reports' );
+    $admins->add_cap( 'edit_others_reports' );
+    $admins->add_cap( 'publish_reports' );
+    $admins->add_cap( 'read_report' );
+    $admins->add_cap( 'read_private_reports' );
+    $admins->add_cap( 'delete_reports' );
+    $admins->add_cap( 'edit_published_reports' );
+}
+add_action( 'admin_init', 'add_sectheme_caps');
+
+function add_admintheme_caps() {
+    // gets the secretary role
+    $admins = get_role( 'administrator' );
+
+    $admins->add_cap( 'edit_report' );
+    $admins->add_cap( 'edit_reports' );
+    $admins->add_cap( 'edit_others_reports' );
+    $admins->add_cap( 'publish_reports' );
+    $admins->add_cap( 'read_report' );
+    $admins->add_cap( 'read_private_reports' );
+    $admins->add_cap( 'delete_reports' );
+    $admins->add_cap( 'delete_others_reports' );
+    $admins->add_cap( 'delete_published_reports' );
+    $admins->add_cap( 'edit_published_reports' );
+}
+add_action( 'admin_init', 'add_admintheme_caps');
 
 add_filter( 'pre_get_posts', 'my_get_posts' );
 
 
-//adds contributions CPT to the author page query
+//adds announcement and reports CPT to the author page query
 
 function my_get_posts( $query ) {
 
 	if ( is_author() && $query->is_main_query() )
-		$query->set( 'post_type', array( 'post', 'page', 'contribution', 'report' ) );
+		$query->set( 'post_type', array( 'post', 'page', 'announcement', 'report' ) );
 
 	return $query;
 }
@@ -489,7 +548,7 @@ function add_logout_link( $items, $args )
             $items .= '<li><a href="'. get_edit_user_link() .'">Edit Profile</a></li>';
             $items .= '<li class="logout"><a href="'. wp_logout_url() .'">Log Out</a></li>';
 
-        } elseif (current_user_can('committee_member') && is_user_logged_in())
+        } elseif (current_user_can('editor') && is_user_logged_in())
         {
             $items .= '<li class="has-dropdown"><a href="#">Your Account</a>';
             $items .= '<ul class="dropdown"><li><a href="' . admin_url() . 'post-new.php">Add News/Article</a></li>';
@@ -499,7 +558,7 @@ function add_logout_link( $items, $args )
             $items .= '<li class="logout"><a href="'. wp_logout_url() .'">Log Out</a></li>';
 
         }
-        elseif (current_user_can('rc_member') && is_user_logged_in())
+        elseif (current_user_can('author') && is_user_logged_in())
         {
             $items .= '<li class="has-dropdown"><a href="#">Your Account</a>';
             $items .= '<ul class="dropdown"><li><a href="' . admin_url() . 'post-new.php">Add News/Article</a></li>';

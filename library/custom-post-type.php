@@ -148,53 +148,7 @@ function rc11_reports() {
     	)
     );
 
-// adding custom capabilities for the report CPT allow president, secretary and administrator to publish, delete etc.
-function add_theme_caps() {
-    // gets the president role
-    $admins = get_role( 'president' );
 
-    $admins->add_cap( 'edit_report' );
-    $admins->add_cap( 'edit_reports' );
-    $admins->add_cap( 'edit_others_reports' );
-    $admins->add_cap( 'publish_reports' );
-    $admins->add_cap( 'read_report' );
-    $admins->add_cap( 'read_private_reports' );
-    $admins->add_cap( 'delete_reports' );
-    $admins->add_cap( 'edit_published_reports' );
-}
-add_action( 'admin_init', 'add_theme_caps');
-
-function add_sectheme_caps() {
-    // gets the secretary role
-    $admins = get_role( 'secretary' );
-
-    $admins->add_cap( 'edit_report' );
-    $admins->add_cap( 'edit_reports' );
-    $admins->add_cap( 'edit_others_reports' );
-    $admins->add_cap( 'publish_reports' );
-    $admins->add_cap( 'read_report' );
-    $admins->add_cap( 'read_private_reports' );
-    $admins->add_cap( 'delete_reports' );
-    $admins->add_cap( 'edit_published_reports' );
-}
-add_action( 'admin_init', 'add_sectheme_caps');
-
-function add_admintheme_caps() {
-    // gets the secretary role
-    $admins = get_role( 'administrator' );
-
-    $admins->add_cap( 'edit_report' );
-    $admins->add_cap( 'edit_reports' );
-    $admins->add_cap( 'edit_others_reports' );
-    $admins->add_cap( 'publish_reports' );
-    $admins->add_cap( 'read_report' );
-    $admins->add_cap( 'read_private_reports' );
-    $admins->add_cap( 'delete_reports' );
-    $admins->add_cap( 'delete_others_reports' );
-    $admins->add_cap( 'delete_published_reports' );
-    $admins->add_cap( 'edit_published_reports' );
-}
-add_action( 'admin_init', 'add_admintheme_caps');
 
 
 /*
