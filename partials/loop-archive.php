@@ -43,12 +43,6 @@
         echo ' / ' . $dead_time . '</span>' ;
         }
 
-        $price = get_field('price');
-        if($price) {
-        echo '<label>Price:</label>' . $price ;
-        }
-
-
         $content = get_the_content();
             $trimContent = wp_trim_words( $content, $num_words = 50, $more = null );
 			echo $trimContent;
