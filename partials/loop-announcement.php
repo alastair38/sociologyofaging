@@ -39,12 +39,6 @@
         echo ' / ' . $dead_time . '</span>' ;
         }
 
-        $price = get_field('price');
-        if($price) {
-        echo '<span><strong>Price: </strong></span>' . $price ;
-        }
-
-
         the_content();
 
         $more = get_field('more_information');

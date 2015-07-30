@@ -6,6 +6,6 @@
 
   </section>
   <footer class="article-footer">
-      <p><?php _e("This is the error message in the partials/missing-content.php template.", "jointstheme"); ?></p>
+
   </footer>
 </article>
