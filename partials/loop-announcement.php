@@ -116,6 +116,10 @@
     <?php
         $pubType = get_field('publication_type');
         $authors = get_field('authors');
+        $editors = get_field('editors');
+        if ($editors) {
+        $eds = ' in ' . get_field('editors') . ' (Eds) ';
+        }
         $bookName = get_field('book_name');
         $yearPub = ' (' . get_field('year_of_publication') . ').';
         $placePub = get_field('place_of_publication') . ': ';
@@ -135,7 +139,7 @@
         }
 
         if($pubType === 'Book Chapter') {
-        echo '<div id="pubDetails"><h4>Publication Details</h4>' . $authors . ', Eds' . $yearPub . '<em>' . $title . '</em>, ' . $placePub . $publisher . $pageNos . '</div>';
+        echo "<div id='pubDetails'><h4>Publication Details</h4>" . $authors . ", " . $yearPub . "'" .  $title . "', " . $eds . "<em>" .  $bookName . "</em>, " . $placePub . $publisher . $pageNos . "</div>";
         }
 
         if($pubType === 'Journal') {

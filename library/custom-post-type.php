@@ -490,6 +490,29 @@ if(function_exists("register_field_group"))
 				'formatting' => 'none',
 				'maxlength' => '',
 			),
+            	array (
+				'key' => 'field_55b9ff3abdec5',
+				'label' => 'Editors',
+				'name' => 'editors',
+				'type' => 'text',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_558bf55f9096e',
+							'operator' => '==',
+							'value' => 'Book Chapter',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => 'Enter the names of the editors of the book your chapter appeared in',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'none',
+				'maxlength' => '',
+			),
 			array (
 				'key' => 'field_558bf842426ec',
 				'label' => 'Year of Publication',
