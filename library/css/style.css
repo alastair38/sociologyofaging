@@ -7027,7 +7027,7 @@ HOME PAGE
   background: transparent; }
   .home article a {
     color: #f2f071; }
-  .home article:focus, .home article a:hover {
+  .home article a:focus, .home article a:hover {
     text-decoration: underline; }
   .home article p {
     font-size: 100%;
@@ -7089,6 +7089,7 @@ ul#homeSideLinks li {
     list-style-type: none;
     margin-bottom: 1em; }
   .home .latestNews a:focus, .home .latestNews a:hover > h6 {
+    color: #FFFFFF;
     text-decoration: underline; }
   .home .latestNews h6 {
     display: inline;
@@ -7176,18 +7177,18 @@ li.report_author ul li,
 li.contribution_type ul li,
 li.categories ul li {
   background: #006080;
-  margin-bottom: .5em;
-  transition: 350ms; }
+  margin-bottom: .5em; }
   li.report_author ul li a,
   li.contribution_type ul li a,
   li.categories ul li a {
     display: block;
-    color: #FFFFFF; }
-  li.report_author ul li:hover, li.report_author ul li:focus,
-  li.contribution_type ul li:hover,
-  li.contribution_type ul li:focus,
-  li.categories ul li:hover,
-  li.categories ul li:focus {
+    color: #FFFFFF;
+    transition: 350ms; }
+  li.report_author ul li a:hover, li.report_author ul li a:focus,
+  li.contribution_type ul li a:hover,
+  li.contribution_type ul li a:focus,
+  li.categories ul li a:hover,
+  li.categories ul li a:focus {
     background: #444444; }
 
 /*********************
@@ -7263,6 +7264,8 @@ ul#singleAuthor {
     font-size: 80%;
     width: 25%;
     margin: 0 2%; }
+    ul#singleAuthor li a:focus {
+      background: #555555; }
 
 .allAuthors {
   padding: 0.5em;
@@ -7277,6 +7280,27 @@ ul#singleAuthor {
     font-size: 110%;
     text-align: center;
     font-weight: 400; }
+  .allAuthors a:hover, .allAuthors a:focus {
+    border-bottom: 2px solid #555555; }
+
+.author .article-header h2 a:hover, .author .article-header h2 a:focus,
+.blog .article-header h2 a:hover,
+.blog .article-header h2 a:focus,
+.archive .article-header h2 a:hover,
+.archive .article-header h2 a:focus,
+.author .article-header p a:hover,
+.author .article-header p a:focus,
+.blog .article-header p a:hover,
+.blog .article-header p a:focus,
+.archive .article-header p a:hover,
+.archive .article-header p a:focus,
+.author .entry-content a:hover,
+.author .entry-content a:focus,
+.blog .entry-content a:hover,
+.blog .entry-content a:focus,
+.archive .entry-content a:hover,
+.archive .entry-content a:focus {
+  border-bottom: 2px solid #555555; }
 
 .authorInfo span {
   display: block;
@@ -7325,6 +7349,11 @@ hr:last-child {
   display: none; }
 .page-template-page-reports article {
   margin-bottom: 1em; }
+  .page-template-page-reports article a:focus {
+    border-bottom: 2px solid #555555; }
+
+.page-template-page-meetings article a:focus {
+  border-bottom: 2px solid #555555; }
 
 /*********************
 SHARE LINKS
@@ -7348,6 +7377,8 @@ ul.share-links {
       background: #444444; }
     ul.share-links li a {
       color: #FFFFFF; }
+      ul.share-links li a:focus {
+        color: #444444; }
 
 /*********************
 POSTS & CONTENT STYLES

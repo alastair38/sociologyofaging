@@ -365,7 +365,7 @@ HOME PAGE
     a {
         color: $contrast-color;
     }
-    &:focus, a:hover {
+    a:focus, a:hover {
         text-decoration: underline;
     }
     p {
@@ -448,6 +448,7 @@ ul#homeSideLinks li {
         margin-bottom: 1em;
     }
     a:focus, a:hover > h6 {
+        color: $white;
         text-decoration: underline;
     }
     h6 {
@@ -565,12 +566,12 @@ li.contribution_type ul li,
 li.categories ul li {
     background: $primary-color;
     margin-bottom: .5em;
-    transition: 350ms;
     a {
         display:block;
         color: $white;
+        transition: 350ms;
     }
-    &:hover, &:focus {
+    a:hover, a:focus {
         background: $tuatara;
     }
 }
@@ -669,6 +670,9 @@ ul#singleAuthor {
         font-size: 80%;
         width: 25%;
         margin: 0 2%;
+        a:focus {
+            background: $charcoal;
+        }
     }
 }
 
@@ -686,6 +690,23 @@ ul#singleAuthor {
     font-size: 110%;
     text-align: center;
     font-weight: 400;
+    }
+    a:hover, a:focus {
+        border-bottom: 2px solid $charcoal;
+    }
+}
+
+.author .article-header h2,
+.blog .article-header h2,
+.archive .article-header h2,
+.author .article-header p,
+.blog .article-header p,
+.archive .article-header p,
+.author .entry-content,
+.blog .entry-content,
+.archive .entry-content {
+    a:hover, a:focus {
+        border-bottom: 2px solid $charcoal;
     }
 }
 
@@ -750,6 +771,15 @@ hr:last-child {
     }
     article {
     margin-bottom: 1em;
+    a:focus {
+        border-bottom: 2px solid $charcoal;
+    }
+    }
+}
+
+.page-template-page-meetings {
+    article a:focus {
+        border-bottom: 2px solid $charcoal;
     }
 }
 
@@ -772,11 +802,14 @@ ul.share-links {
         text-align: center;
         border-radius: 50%;
         transition: 350ms;
-        &:hover {
+        &:hover  {
             background: $tuatara;
         }
         a {
             color: $white;
+            &:focus {
+                color: $tuatara;
+            }
         }
     }
 }

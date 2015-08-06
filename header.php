@@ -52,25 +52,7 @@
 
 							 <?php get_template_part( 'partials/nav', 'main-offcanvas' ); ?>
 
-                             <!--
-
-                            <button id="accessible">&#63;</button>
-
-                            <div id="modal" aria-hidden="true" aria-labelledby="modalTitle" aria-describedby="modalDescription" role="dialog">
-                                <div id="modalDescription" class="screen-reader-text">
-                                Beginning of dialog window. Escape will cancel and close the window.
-                                </div>
-                                <h1 id="modalTitle">Accessibility Tips</h1>
-
-                                <?php joints_main_nav(); ?>
-
-                                <button id="modalCloseButton" class="modalCloseButton" title="Close Accessibility Tips"><span id="cancel">Close</span></button>
-
-                            </div>
-                            <div id="modalOverlay" tabindex="-1"></div>
-                            -->
-
-                            <button href="#" class="scrollToTop"><i class="fi-play-circle"></i></button>
+                            <button href="#" aria-label="Click or hit enter to scroll to the top of the page" class="scrollToTop"><i class="fi-play-circle"></i></button>
 
 						</div> <!-- end #inner-header -->
 

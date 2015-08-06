@@ -6,7 +6,7 @@ $role = get_user_role($curauth->ID);
 <div class="author small-12 columns">
 
 
-		<div class="authorInfo large-8 medium-8 small-12 columns">
+		<div class="authorInfo large-8 medium-8 small-12 columns" itemscope itemtype="http://schema.org/Person">
             <div class="authorAvatar">
 
           <?php echo get_avatar( $curauth->user_email, '80' ); ?>
@@ -14,21 +14,21 @@ $role = get_user_role($curauth->ID);
 
 
 
-            <h2 class="authorName"><?php echo $curauth->display_name; ?></h2>
+            <h2 itemprop="name" class="authorName"><?php echo $curauth->display_name; ?></h2>
             <?php
             if ($curauth->jobTitle) {
-                echo '<span>' . $curauth->jobTitle . '</span>';
+                echo '<span itemprop="jobTitle">' . esc_html($curauth->jobTitle) . '</span>';
             }?>
               <?php
             if ($curauth->organisation) {
-                echo '<span>' . $curauth->organisation . '</span>';
+                echo '<span itemprop="organization">' . esc_html($curauth->organisation) . '</span>';
             }?>
             <?php
             if ($curauth->rc11Role) {
-               echo "<span id='member'>" . $curauth->rc11Role . "</span>";
+               echo "<span itemprop='member' id='member'>" . esc_html($curauth->rc11Role) . "</span>";
             }?>
 
-			<p class="authorDescription"><?php echo $curauth->description; ?></ p>
+			<p class="authorDescription"><?php echo esc_html($curauth->description); ?></ p>
 			<p class="socialIcons">
 
 
@@ -37,19 +37,19 @@ $role = get_user_role($curauth->ID);
 	$email = $curauth->user_email;
 	if($email != '')
 	{
-		printf('<li><a href="mailto:' . $email . '" target="_blank"><i class="fi-mail"></i> Email</a></li>');
+		printf('<li><a href="mailto:' . sanitize_email($email) . '" itemprop="email" aria-label="Hit enter to open your email client to contact ' . $curauth->display_name . '" target="_blank"><i class="fi-mail"></i> Email</a></li>');
 	}
 
 	$twitter = $curauth->twitter;
 	if($twitter != '')
 	{
-		printf('<li><a href="%s" target="_blank">%s</a></li>', $twitter, '<i class="fi-social-twitter"></i> Twitter');
+		printf('<li><a href="%s" aria-label="Hit enter to visit the Twitter profile of ' . $curauth->display_name . '" target="_blank">%s</a></li>', esc_url($twitter), '<i class="fi-social-twitter"></i> Twitter');
 	}
 
 	$linkedin = $curauth->linkedin;
 	if($linkedin != '')
 	{
-		printf('<li><a href="%s" target="_blank">%s</a></li>', $linkedin, '<i class="fi-social-linkedin"></i> LinkedIn');
+		printf('<li><a href="%s" aria-label="Hit enter to visit the Linkedin profile of ' . $curauth->display_name . '" target="_blank">%s</a></li>', esc_url($linkedin), '<i class="fi-social-linkedin"></i> LinkedIn');
 	}
 ?>
 </ul>

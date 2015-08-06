@@ -48,7 +48,7 @@ if (!empty($authors)) {
         $organisation = get_user_meta($author->ID, 'organisation', true);
         $jobTitle = get_user_meta($author->ID, 'jobTitle', true);
         $rc11Role = get_user_meta($author->ID, 'rc11Role', true);
-        echo '<div class="author large-3 medium-6 small-12 columns end"><div class="authorInfo"><h2 class="authorName"><a href="' .get_author_posts_url( $author->ID ). '"> '.$author_info->display_name.'</a></h2><div class="authorAvatar">' . get_avatar( $author_info->user_email, '80' ) . '</div><span>' . $jobTitle . '</span><span>' . $organisation . '</span><span class="member">' . $rc11Role . '</span><span class="profileLink"><a href="' .get_author_posts_url( $author->ID ). '">View Profile</a></span></div></div>';
+        echo '<div class="author large-3 medium-6 small-12 columns end"><div class="authorInfo" itemscope itemtype="http://schema.org/Person"><h2 itemprop="name" class="authorName"><a href="' .get_author_posts_url( $author->ID ). '"> '.$author_info->display_name.'</a></h2><div class="authorAvatar">' . get_avatar( $author_info->user_email, '80' ) . '</div><span itemprop="jobTitle">' . $jobTitle . '</span><span itemprop="organization">' . $organisation . '</span><span itemprop="member" class="member">' . $rc11Role . '</span><span class="profileLink"><a href="' .get_author_posts_url( $author->ID ). '"  aria-label="Click or hit enter to view the full profile of ' .$author_info->display_name. '">View Profile</a></span></div></div>';
     }
 } else {
 }?>
