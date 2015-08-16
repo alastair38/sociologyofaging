@@ -10,8 +10,7 @@
 
 					   <?php
                         $presreports = get_posts(array(
-                            'post_type' => 'conference',
-                            'conference_category' => 'latest'
+                            'post_type' => 'conference'
                         ));
                         ?>
 
@@ -31,7 +30,7 @@
 
                             <?php echo get_the_post_thumbnail($presreport->ID, 'full');?>
 
-                            <?php $content = $presreport->post_content;
+                            <?php $content = apply_filters('the_content', $presreport->post_content);
                             $trimContent = wp_trim_words( $content, $num_words = 50, $more = null );
                             echo $trimContent;?>
 
