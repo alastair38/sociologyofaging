@@ -31,9 +31,12 @@
 
                             <?php echo get_the_post_thumbnail($presreport->ID, 'full');?>
 
-                            <?php $content = $presreport->post_content;
-                            $trimContent = wp_trim_words( $content, $num_words = 50, $more = null );
-                            echo $trimContent;?>
+                            <?php
+                            $content = apply_filters('the_content', $presreport->post_content);
+                            $trimContent = wp_trim_words( $the_content, $num_words = 50, $more = null );
+                            echo $content;
+                            ?>
+
 
                         </article>
                         <hr>
