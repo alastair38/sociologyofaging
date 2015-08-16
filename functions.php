@@ -544,7 +544,7 @@ function add_logout_link( $items, $args )
             $items .= '<ul class="dropdown"><li><a href="' . admin_url() . 'post-new.php">Add News/Article</a></li>';
             $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=announcement">Add Member Announcement</a></li>';
             $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=report">Add President/Secretary Report</a></li>';
-            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=page">Add RC-11 Meeting</a></li>';
+            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=conference">Add RC11 Conference</a></li>';
             $items .= '<li><a href="'. get_edit_user_link() .'">Edit Profile</a></li>';
             $items .= '<li class="logout"><a href="'. wp_logout_url() .'">Log Out</a></li>';
 
@@ -553,7 +553,7 @@ function add_logout_link( $items, $args )
             $items .= '<li class="has-dropdown"><a href="#">Your Account</a>';
             $items .= '<ul class="dropdown"><li><a href="' . admin_url() . 'post-new.php">Add News/Article</a></li>';
             $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=announcement">Add Member Announcement</a></li>';
-            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=page">Add RC-11 Meeting</a></li>';
+            $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=conference">Add RC11 Conference</a></li>';
             $items .= '<li><a href="'. get_edit_user_link() .'">Edit Profile</a></li>';
             $items .= '<li class="logout"><a href="'. wp_logout_url() .'">Log Out</a></li>';
 
@@ -632,23 +632,6 @@ function change_post_type_labels() {
 }
 add_action( 'init', 'change_post_type_labels' );
 
-function change_page_type_labels() {
-  global $wp_post_types;
-
-  // Get the post labels
-  $postLabels = $wp_post_types['page']->labels;
-  $postLabels->name = 'Pages + Meetings';
-  $postLabels->singular_name = 'Pages + Meetings';
-  $postLabels->add_new = 'Add Pages + Meetings';
-  $postLabels->add_new_item = 'Add Pages + Meetings';
-  $postLabels->edit_item = 'Edit Pages + Meetings';
-  $postLabels->new_item = 'Pages + Meetings';
-  $postLabels->view_item = 'View Pages + Meetings';
-  $postLabels->search_items = 'Search Pages + Meetings';
-  $postLabels->not_found = 'No Pages + Meetings found';
-  $postLabels->not_found_in_trash = 'No Pages + Meetings found in Trash';
-}
-add_action( 'init', 'change_page_type_labels' );
 
 // remove links/menus from the admin bar
 function mytheme_admin_bar_render() {

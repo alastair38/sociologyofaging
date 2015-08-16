@@ -24,7 +24,7 @@ $page3 = get_page_by_title( 'RC-11 Meetings' );
 
 <li class="large-4 medium-4 small-12 columns"><a href="<?php echo get_page_link($page2->ID); ?>"><?php echo get_the_title($page2->ID);?></a></li>
 <li class="large-4 medium-4 small-12 columns"><a href="<?php echo get_page_link($page1->ID); ?>"><?php echo get_the_title($page1->ID);?></a></li>
-<li class="large-4 medium-4 small-12 columns"><a href="<?php echo get_page_link($page3->ID); ?>"><?php echo get_the_title($page3->ID);?></a></li>
+<li class="large-4 medium-4 small-12 columns"><a href="<?php echo get_term_link( 'latest', 'conference_category' ); ?> ">RC11 Conferences</a></li>
 
 </ul>
 

@@ -148,6 +148,70 @@ function rc11_reports() {
     	)
     );
 
+function rc11_conferences() {
+	// creating (registering) the custom type
+	register_post_type( 'conference', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
+	 	// let's now add all the options for this post type
+		array('labels' => array(
+			'name' => __('Conferences', 'rc11theme'), /* This is the Title of the Group */
+			'singular_name' => __('Conference', 'rc11theme'), /* This is the individual type */
+			'all_items' => __('All Conferences', 'rc11theme'), /* the all items menu item */
+			'add_new' => __('Add New Conference', 'rc11theme'), /* The add new menu item */
+			'add_new_item' => __('Add New Conference', 'rc11theme'), /* Add New Display Title */
+			'edit' => __( 'Edit', 'rc11theme' ), /* Edit Dialog */
+			'edit_item' => __('Edit Conference', 'rc11theme'), /* Edit Display Title */
+			'new_item' => __('New Conference', 'rc11theme'), /* New Display Title */
+			'view_item' => __('View Conferences', 'rc11theme'), /* View Display Title */
+			'search_items' => __('Search Conferences', 'rc11theme'), /* Search Custom Type Title */
+			'not_found' =>  __('Nothing found in the Database.', 'rc11theme'), /* This displays if there are no entries yet */
+			'not_found_in_trash' => __('Nothing found in Trash', 'rc11theme'), /* This displays if there is nothing in the trash */
+			'parent_item_colon' => ''
+			), /* end of arrays */
+			'description' => __( 'RC11 Conferences', 'rc11theme' ), /* Custom Type Description */
+
+			'public' => true,
+			'publicly_queryable' => true,
+			'exclude_from_search' => false,
+			'show_ui' => true,
+			'query_var' => true,
+			'menu_position' => 6, /* this is what order you want it to appear in on the left hand side menu */
+			'menu_icon' => 'dashicons-format-chat', /* the icon for the custom post type menu */
+			'rewrite'	=> array( 'slug' => 'conferences', 'with_front' => false ), /* you can specify its url slug */
+			'has_archive' => true, /* you can rename the slug here */
+			'capability_type' => 'post',
+			'hierarchical' => false,
+			/* the next one is important, it tells what's enabled in the post editor */
+			'supports' => array( 'title', 'editor', 'thumbnail')
+	 	) /* end of options */
+	); /* end of register post type */
+
+
+}
+	// adding the function to the Wordpress init
+	add_action( 'init', 'rc11_conferences');
+
+
+ register_taxonomy( 'conference_category',
+    	array('conference'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
+    	array('hierarchical' => true,     /* if this is true, it acts like categories */
+    		'labels' => array(
+    			'name' => __( 'Conference Category', 'rc11theme' ), /* name of the custom taxonomy */
+    			'singular_name' => __( 'Conference Category', 'rc11theme' ), /* single taxonomy name */
+    			'search_items' =>  __( 'Search Conference Categories', 'rc11theme' ), /* search title for taxomony */
+    			'all_items' => __( 'All Conference Categories', 'rc11theme' ), /* all title for taxonomies */
+    			'parent_item' => __( 'Parent Category', 'rc11theme' ), /* parent title for taxonomy */
+    			'parent_item_colon' => __( 'Parent Category:', 'rc11theme' ), /* parent taxonomy title */
+    			'edit_item' => __( 'Edit Conference Category', 'rc11theme' ), /* edit custom taxonomy title */
+    			'update_item' => __( 'Update Conference Category', 'rc11theme' ), /* update title for taxonomy */
+    			'add_new_item' => __( 'Add New Conference Category', 'rc11theme' ), /* add new title for taxonomy */
+    			'new_item_name' => __( 'New Conference Category Name', 'rc11theme' ) /* name title for taxonomy */
+    		),
+    		'show_admin_column' => true,
+    		'show_ui' => true,
+    		'query_var' => true,
+    		'rewrite' => array( 'slug' => 'rc11_conferences' ),
+    	)
+    );
 
 
 
@@ -307,10 +371,20 @@ if(function_exists("register_field_group"))
 		'fields' => array (
 			array (
 				'key' => 'field_558c28da49c05',
-				'label' => 'Date',
+				'label' => 'Start Date',
 				'name' => 'date',
 				'type' => 'date_picker',
-				'instructions' => 'Add the date for the conference, meeting or training',
+				'instructions' => 'Add the start date for the conference, meeting or training',
+				'date_format' => 'yymmdd',
+				'display_format' => 'dd/mm/yy',
+				'first_day' => 1,
+			),
+            array (
+				'key' => 'field_55d0b1b23b2ce',
+				'label' => 'End Date',
+				'name' => 'end_date',
+				'type' => 'date_picker',
+				'instructions' => 'Add the end date for the conference, meeting or training',
 				'date_format' => 'yymmdd',
 				'display_format' => 'dd/mm/yy',
 				'first_day' => 1,
@@ -1203,14 +1277,14 @@ if(function_exists("register_field_group"))
 	));
     register_field_group(array (
 		'id' => 'acf_note-on-adding-new-rc-11-meetings',
-		'title' => 'Note on Adding New RC-11 Meetings',
+		'title' => 'Note on Adding A New RC11 Conference',
 		'fields' => array (
 			array (
 				'key' => 'field_55b77d4ba8c45',
 				'label' => 'New Meeting',
 				'name' => '',
 				'type' => 'message',
-				'message' => 'If you are adding a new meeting please select <strong>RC-11 Meetings</strong> from the Page Attributes (<em>Parent - select box</em>) on the right-hand side.',
+				'message' => 'If you are adding a new conference - and wish this to feature on the main Conferences page - please select <strong>Latest</strong> from the <em>Conference Category</em> box on the right-hand side. If this is unchecked, the conference will only appear on the conference archives page.',
 			),
 		),
 		'location' => array (
@@ -1218,7 +1292,7 @@ if(function_exists("register_field_group"))
 				array (
 					'param' => 'post_type',
 					'operator' => '==',
-					'value' => 'page',
+					'value' => 'conference',
 					'order_no' => 0,
 					'group_no' => 0,
 				),

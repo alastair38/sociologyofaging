@@ -42,6 +42,13 @@
     }
     ?>
 
+     <?php $postType = get_post_type( $post );
+
+    if ($postType === conference || is_tax('conference_category') ) {
+        echo '<li class="categories"><h4>All Conferences</h4><ul><li><a href="' . get_post_type_archive_link( 'conference' ) . '"> Conference Archive</a></li></ul></li>';
+    }
+    ?>
+
     <?php $postType = get_post_type( $post );
 
     if ($postType === post || is_tax('category') ) {

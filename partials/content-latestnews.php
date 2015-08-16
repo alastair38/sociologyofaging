@@ -1,7 +1,7 @@
 
                             <?php
                         $newsitems = get_posts(array(
-                            'post_type' => 'announcement',
+                            'post_type' => array('announcement' ,'post'),
                             'posts_per_page' => 3
                         ));
                         ?>
