@@ -26,10 +26,13 @@
         }
 
         $date = DateTime::createFromFormat('Ymd', get_field('date'));
-        $enddate = DateTime::createFromFormat('Ymd', get_field('end_date'));
-        $end_date = ' to ' . $enddate->format('F d, Y');
         if($date) {
-        echo '<span><strong>Date -</strong> ' . $date->format('F d, Y') . $end_date . '</span>' ;
+        echo '<span><strong>Start Date -</strong> ' . $date->format('F d, Y') . '</span>' ;
+        }
+
+        $enddate = DateTime::createFromFormat('Ymd', get_field('end_date'));
+        if($enddate) {
+        echo '<span><strong>End Date -</strong> ' . $enddate->format('F d, Y') . '</span>' ;
         }
 
         $deadline = DateTime::createFromFormat('Ymd', get_field('deadline_date'));
