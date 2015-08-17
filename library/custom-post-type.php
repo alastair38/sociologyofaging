@@ -1244,6 +1244,40 @@ if(function_exists("register_field_group"))
 		),
 		'menu_order' => -1,
 	));
+     register_field_group(array (
+		'id' => 'acf_getting-started-news',
+		'title' => 'Getting Started',
+		'fields' => array (
+			array (
+				'key' => 'field_55d2067ec8bff',
+				'label' => 'Getting Started',
+				'name' => '',
+				'type' => 'message',
+				'message' => 'Select from the <strong>"Categories"</strong> list on the right-hand side. Please complete any of the form fields that are relevant to your content.
+
+
+	Any description you wish to include can be added to the main text editor (below the "Add Media" button)',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'acf_after_title',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => -1,
+	));
     register_field_group(array (
 		'id' => 'acf_reminder',
 		'title' => 'Reminder',

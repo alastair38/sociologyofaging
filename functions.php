@@ -599,12 +599,12 @@ function change_post_menu_text() {
   global $submenu;
 
   // Change menu item
-  $menu[5][0] = 'News + Articles';
+  $menu[5][0] = 'News, Articles etc';
 
   // Change post submenu
-  $submenu['edit.php'][5][0] = 'News + Articles';
-  $submenu['edit.php'][10][0] = 'Add News + Articles';
-  $submenu['edit.php'][16][0] = 'News + Articles Tags';
+  $submenu['edit.php'][5][0] = 'News, Articles etc';
+  $submenu['edit.php'][10][0] = 'Add News, Articles etc';
+  $submenu['edit.php'][16][0] = 'Tags';
 }
 
 add_action( 'admin_menu', 'change_post_menu_text' );
@@ -619,16 +619,16 @@ function change_post_type_labels() {
 
   // Get the post labels
   $postLabels = $wp_post_types['post']->labels;
-  $postLabels->name = 'News + Articles';
-  $postLabels->singular_name = 'News + Articles';
-  $postLabels->add_new = 'Add News + Articles';
-  $postLabels->add_new_item = 'Add News + Article';
-  $postLabels->edit_item = 'Edit News + Articles';
-  $postLabels->new_item = 'News + Articles';
-  $postLabels->view_item = 'View News + Articles';
-  $postLabels->search_items = 'Search News + Articles';
+  $postLabels->name = 'News, Articles etc';
+  $postLabels->singular_name = 'News, Articles';
+  $postLabels->add_new = 'Add News/Article/Blog/Research Summary/Book Review/Obituary';
+  $postLabels->add_new_item = 'Add News/Article/Blog/Research Summary/Book Review/Obituary';
+  $postLabels->edit_item = 'Edit News, Articles';
+  $postLabels->new_item = 'News, Articles';
+  $postLabels->view_item = 'View News, Articles';
+  $postLabels->search_items = 'Search News, Articles';
   $postLabels->not_found = 'No News + Articles found';
-  $postLabels->not_found_in_trash = 'No News + Articles found in Trash';
+  $postLabels->not_found_in_trash = 'No News, Articles found in Trash';
 }
 add_action( 'init', 'change_post_type_labels' );
 
