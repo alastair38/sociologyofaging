@@ -530,45 +530,56 @@ if (!current_user_can('administrator') && !is_admin()) {
 }
 }
 
+
+add_filter( 'wp_nav_menu_items', 'add_login_link', 10, 2);
+/**
+ * Add a login/logout link, edit profile and add new articles etc links for logged in users
+ */
+function add_login_link( $items, $args )
+{
+    if($args->theme_location == 'main-nav')
+    {
+        if (!is_user_logged_in())
+        {
+            $items .= '<li><a href="'. wp_login_url() .'">Log In</a></li>';
+        }
+    }
+    return $items;
+}
+
 add_filter( 'wp_nav_menu_items', 'add_logout_link', 10, 2);
 /**
  * Add a login/logout link, edit profile and add new articles etc links for logged in users
  */
 function add_logout_link( $items, $args )
 {
-    if($args->theme_location == 'main-nav')
+    if($args->theme_location == 'footer-links')
     {
         if (current_user_can('administrator')||current_user_can('president')||current_user_can('secretary') && is_user_logged_in())
         {
-            $items .= '<li class="has-dropdown"><a href="#">Your Account</a>';
-            $items .= '<ul class="dropdown"><li><a href="' . admin_url() . 'post-new.php">Add News/Article</a></li>';
+            $items .= '<li><a href="' . admin_url() . 'post-new.php">Add News/Article</a></li>';
             $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=announcement">Add Member Announcement</a></li>';
             $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=report">Add President/Secretary Report</a></li>';
             $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=conference">Add RC11 Conference</a></li>';
             $items .= '<li><a href="'. get_edit_user_link() .'">Edit Profile</a></li>';
-            $items .= '<li class="logout"><a href="'. wp_logout_url() .'">Log Out</a></li>';
+            $items .= '<li class="logout"><a href="'. wp_logout_url(home_url()) .'">Log Out</a></li>';
 
         } elseif (current_user_can('editor') && is_user_logged_in())
         {
-            $items .= '<li class="has-dropdown"><a href="#">Your Account</a>';
-            $items .= '<ul class="dropdown"><li><a href="' . admin_url() . 'post-new.php">Add News/Article</a></li>';
+            $items .= '<li><a href="' . admin_url() . 'post-new.php">Add News/Article</a></li>';
             $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=announcement">Add Member Announcement</a></li>';
             $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=conference">Add RC11 Conference</a></li>';
             $items .= '<li><a href="'. get_edit_user_link() .'">Edit Profile</a></li>';
-            $items .= '<li class="logout"><a href="'. wp_logout_url() .'">Log Out</a></li>';
+            $items .= '<li class="logout"><a href="'. wp_logout_url(home_url()) .'">Log Out</a></li>';
 
         }
         elseif (current_user_can('author') && is_user_logged_in())
         {
-            $items .= '<li class="has-dropdown"><a href="#">Your Account</a>';
-            $items .= '<ul class="dropdown"><li><a href="' . admin_url() . 'post-new.php">Add News/Article</a></li>';
+            $items .= '<li><a href="' . admin_url() . 'post-new.php">Add News/Article</a></li>';
             $items .= '<li><a href="' . admin_url() . 'post-new.php?post_type=announcement">Add Member Announcement</a></li>';
             $items .= '<li><a href="'. get_edit_user_link() .'">Edit Profile</a></li>';
-            $items .= '<li class="logout"><a href="'. wp_logout_url() .'">Log Out</a></li>';
+            $items .= '<li class="logout"><a href="'. wp_logout_url(home_url()) .'">Log Out</a></li>';
 
-        }
-        else {
-            $items .= '<li><a href="'. wp_login_url() .'">Log In</a></li>';
         }
     }
     return $items;

@@ -887,6 +887,20 @@ a#moreInfo {
     }
 }
 
+a.post-edit-link {
+    display: inline-block;
+    border: 1px solid $primary-color;
+    border-radius: 2px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1em;
+    transition: 350ms;
+    &:hover, :focus {
+        background: $primary-color;
+        color: $white;
+    }
+}
+
 .hentry {
 
 	header {}
@@ -1374,6 +1388,8 @@ FOOTER STYLES
 	margin-top: 1em;
 }
 
+
+
 	/*
 	if you checked out the link above:
 	http://www.alistapart.com/articles/organizing-mobile/
@@ -1395,6 +1411,41 @@ FOOTER STYLES
 
 
 	.copyright { }
+
+nav#footerfix {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: rgba(255,255,255,.95);
+    text-align: center;
+    li {
+        list-style-type: none;
+        a {
+            background: $primary-color;
+            color: $white;
+            display: inline-block;
+            transition: 350ms;
+            &:hover, :focus {
+                background: $tuatara;
+            }
+        }
+    }
+}
+
+ul#menu-login-1 {
+    display: inline-table;
+}
+
+ul#menu-login {
+    margin-left: 0;
+    li {
+        list-style-type: none;
+        width: 100%;
+        margin-left: 0;
+    }
+}
 
 /*********************
 FOUNDATION STYLES

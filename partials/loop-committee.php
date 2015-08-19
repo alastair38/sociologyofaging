@@ -103,7 +103,7 @@ $args = array(
 		'relation' => 'OR',
 		array(
 			'key'     => 'rc11Role',
-			'value'   => 'Newsletter Editor',
+			'value'   => 'Communications Officer',
 			'compare' => '='
 		),
         array(

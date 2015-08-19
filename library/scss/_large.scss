@@ -226,6 +226,8 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
+
+
 .footer-links {
 	ul {
 		li {
@@ -240,7 +242,11 @@ mobile. Make sure to double check these!
 			ul {}
 		}
 	}
-} /* end .footer-links */
+}
+
+
+
+/* end .footer-links */
 
 /*********************
 FOUNDATION STYLES
