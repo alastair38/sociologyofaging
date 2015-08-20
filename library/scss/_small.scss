@@ -1420,12 +1420,14 @@ nav#footerfix {
     li {
         list-style-type: none;
         a {
-            background: $primary-color;
+            background: $tuatara;
+            border: 1px solid $tuatara;
             color: $white;
             display: inline-block;
             transition: 350ms;
             &:hover, :focus {
-                background: $tuatara;
+                background: transparent;
+                color: $tuatara;
             }
         }
     }
@@ -1433,7 +1435,7 @@ nav#footerfix {
 
 ul#menu-login-1 {
     display: inline-table;
-    margin-bottom: 0;
+    margin: 5px 0 0 0;
 }
 
 ul#menu-login {

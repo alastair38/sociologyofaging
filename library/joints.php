@@ -131,10 +131,10 @@ function joints_scripts_and_styles() {
     wp_enqueue_script( 'accessible-modal-js', get_template_directory_uri() . '/library/js/accessible-modal.js', array( 'jquery' ), $theme_version, true );
 
       //adding slick.js cdn script file in the footer
-    wp_enqueue_script( 'slick-js', 'http://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js', array( 'jquery' ), $theme_version, true );
+    //wp_enqueue_script( 'slick-js', 'http://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js', array( 'jquery' ), $theme_version, true );
 
       //adding slick init script file in the footer
-    wp_enqueue_script( 'slick-init', get_template_directory_uri() . '/library/js/slick.js', array( 'slick-js' ), $theme_version, true );
+    // wp_enqueue_script( 'slick-init', get_template_directory_uri() . '/library/js/slick.js', array( 'slick-js' ), $theme_version, true );
 
      // register google fonts stylesheet
      wp_enqueue_style( 'google fonts', 'http://fonts.googleapis.com/css?family=Raleway:100,300,400|Arvo|Montserrat', array(), $theme_version, 'all' );
@@ -142,8 +142,9 @@ function joints_scripts_and_styles() {
     // register main stylesheet
     wp_enqueue_style( 'joints-stylesheet', get_template_directory_uri() . '/library/css/style.css', array(), $theme_version, 'all' );
 
+
        // register slick.js stylesheet
-    wp_enqueue_style( 'slick-styles', get_template_directory_uri() . '/library/css/slick.css', array(), $theme_version, 'all' );
+    //wp_enqueue_style( 'slick-styles', get_template_directory_uri() . '/library/css/slick.css', array(), $theme_version, 'all' );
 
     // register foundation icons
     wp_enqueue_style( 'foundation-icons', get_template_directory_uri() . '/library/css/icons/foundation-icons.css', array(), $theme_version, 'all' );

@@ -7727,16 +7727,18 @@ nav#footerfix {
   nav#footerfix li {
     list-style-type: none; }
     nav#footerfix li a {
-      background: #006080;
+      background: #444444;
+      border: 1px solid #444444;
       color: #FFFFFF;
       display: inline-block;
       transition: 350ms; }
       nav#footerfix li a:hover, nav#footerfix li a :focus {
-        background: #444444; }
+        background: transparent;
+        color: #444444; }
 
 ul#menu-login-1 {
   display: inline-table;
-  margin-bottom: 0; }
+  margin: 5px 0 0 0; }
 
 ul#menu-login {
   margin-left: 0; }
