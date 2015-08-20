@@ -98,7 +98,7 @@ if (!empty($authors)) {
 
 $args = array(
     'orderby' => 'rc11Role',
-    'order' => 'ASC',
+    'order' => 'DESC',
 	'meta_query' => array(
 		'relation' => 'OR',
 		array(

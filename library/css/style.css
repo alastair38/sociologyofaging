@@ -5553,7 +5553,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 0; }
 
 h1 {
-  font-size: 2.125rem; }
+  font-size: 1.6875rem; }
 
 h2 {
   font-size: 1.6875rem; }
@@ -5723,7 +5723,7 @@ blockquote p {
     line-height: 1.4; }
 
   h1 {
-    font-size: 2.75rem; }
+    font-size: 2.3125rem; }
 
   h2 {
     font-size: 2.3125rem; }
@@ -7280,8 +7280,6 @@ ul#singleAuthor {
     font-size: 110%;
     text-align: center;
     font-weight: 400; }
-  .allAuthors a:hover, .allAuthors a:focus {
-    border-bottom: 2px solid #555555; }
 
 .author .article-header h2 a:hover, .author .article-header h2 a:focus,
 .blog .article-header h2 a:hover,
@@ -7720,11 +7718,11 @@ view.
 /* end .footer-links */
 nav#footerfix {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.95);
+  background: #f5f5dc;
   text-align: center; }
   nav#footerfix li {
     list-style-type: none; }
@@ -7737,7 +7735,8 @@ nav#footerfix {
         background: #444444; }
 
 ul#menu-login-1 {
-  display: inline-table; }
+  display: inline-table;
+  margin-bottom: 0; }
 
 ul#menu-login {
   margin-left: 0; }

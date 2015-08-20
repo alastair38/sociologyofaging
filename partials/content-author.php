@@ -77,27 +77,6 @@ if ($role != author ){?>
     $id = $curauth->ID;
     $args = array(
 	'blog_id'      => $GLOBALS['blog_id'],
-	'role'         => 'editor',
-	'exclude'      => array($id),
-	'orderby'      => 'display_name',
-	'order'        => 'ASC',
-	'count_total'  => false,
-	'fields'       => 'all',
-	'who'          => ''
- ); ?>
-
-    <?php
-    $blogusers = get_users( $args );
-    foreach ( $blogusers as $user ) {?>
-
-        <h4 class="authorName"><a href="<?php echo get_author_posts_url( $user->ID ); ?>"><?php echo $user->display_name; ?></a></h4>
-<?php }
-
-    ?>
-    <?php
-    $id = $curauth->ID;
-    $args = array(
-	'blog_id'      => $GLOBALS['blog_id'],
 	'role'         => 'president',
 	'exclude'      => array($id),
 	'orderby'      => 'display_name',
@@ -123,6 +102,29 @@ if ($role != author ){?>
 	'exclude'      => array($id),
 	'orderby'      => 'display_name',
 	'order'        => 'ASC',
+	'count_total'  => false,
+	'fields'       => 'all',
+	'who'          => ''
+ ); ?>
+
+    <?php
+    $blogusers = get_users( $args );
+    foreach ( $blogusers as $user ) {?>
+
+        <h4 class="authorName"><a href="<?php echo get_author_posts_url( $user->ID ); ?>"><?php echo $user->display_name; ?></a></h4>
+<?php }
+
+    ?>
+
+      <?php
+    $id = $curauth->ID;
+    $args = array(
+	'blog_id'      => $GLOBALS['blog_id'],
+	'role'         => 'editor',
+	'exclude'      => array($id),
+    'orderby'   => 'meta_value',
+    'order'     => 'ASC',
+    'meta_key'  => 'last_name',
 	'count_total'  => false,
 	'fields'       => 'all',
 	'who'          => ''

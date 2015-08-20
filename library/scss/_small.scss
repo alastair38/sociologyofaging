@@ -691,9 +691,6 @@ ul#singleAuthor {
     text-align: center;
     font-weight: 400;
     }
-    a:hover, a:focus {
-        border-bottom: 2px solid $charcoal;
-    }
 }
 
 .author .article-header h2,
@@ -1414,11 +1411,11 @@ FOOTER STYLES
 
 nav#footerfix {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
     z-index: 10;
-    background: rgba(255,255,255,.95);
+    background: #f5f5dc;
     text-align: center;
     li {
         list-style-type: none;
@@ -1436,6 +1433,7 @@ nav#footerfix {
 
 ul#menu-login-1 {
     display: inline-table;
+    margin-bottom: 0;
 }
 
 ul#menu-login {
