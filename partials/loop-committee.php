@@ -98,7 +98,7 @@ if (!empty($authors)) {
 
 $args = array(
     'orderby' => 'rc11Role',
-    'order' => 'DESC',
+    'order' => 'ASC',
 	'meta_query' => array(
 		'relation' => 'OR',
 		array(
@@ -108,7 +108,7 @@ $args = array(
 		),
         array(
 			'key'     => 'rc11Role',
-			'value'   => 'Committee Member',
+			'value'   => 'Officer-at-large',
 			'compare' => '='
 		)
 	)
