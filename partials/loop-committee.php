@@ -15,8 +15,9 @@
 <?php
 
 $args = array(
-    'orderby' => 'rc11Role',
-    'order' => 'DESC',
+    'orderby'   => 'meta_value',
+    'order'     => 'ASC',
+    'meta_key'  => 'rc11Role',
 	'meta_query' => array(
 		'relation' => 'OR',
 		array(
@@ -56,8 +57,9 @@ if (!empty($authors)) {
 <?php
 
 $args = array(
-    'orderby' => 'rc11Role',
-    'order' => 'DESC',
+    'orderby'   => 'meta_value',
+    'order'     => 'DESC',
+    'meta_key'  => 'rc11Role',
 	'meta_query' => array(
 		'relation' => 'OR',
 		array(
@@ -97,8 +99,9 @@ if (!empty($authors)) {
 <?php
 
 $args = array(
-    'orderby' => 'rc11Role',
-    'order' => 'ASC',
+    'orderby'   => 'meta_value',
+    'order'     => 'ASC',
+    'meta_key'  => 'rc11Role',
 	'meta_query' => array(
 		'relation' => 'OR',
 		array(
@@ -134,6 +137,7 @@ if (!empty($authors)) {
     }
 } else {
 }?>
+
 
 
 		</div>
