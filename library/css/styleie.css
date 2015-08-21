@@ -297,8 +297,11 @@ nav#footerfix li a {
     padding: 0 5px;
 }
 
-.scrollToTop {
-display: none !important;
+
+
+.dropdown,
+.has-dropdown>a:after {
+   display: none !important;
 }
 
 

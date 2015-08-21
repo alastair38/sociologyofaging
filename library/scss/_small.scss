@@ -176,9 +176,9 @@ style a page via class
 
 /* Cookie Bar */
 
-#cookie-bar {background:#111111; height:24px; line-height:24px; color:#eeeeee; text-align:center; padding:3px 0;}
-#cookie-bar.fixed {position:fixed; top:0; left:0; width:100%;}
-#cookie-bar.fixed.bottom {bottom:0; top:auto;}
+#cookie-bar {background:#111111; height:40px; line-height:40px; color:#eeeeee; text-align:center; padding:3px 0;}
+#cookie-bar.fixed {position:fixed; top:0; left:0; bottom:0; width:100%;}
+#cookie-bar.fixed.bottom {bottom:15px; top:auto;}
 #cookie-bar p {margin:0; padding:0;}
 #cookie-bar a {color:#ffffff; display:inline-block; border-radius:3px; text-decoration:none; padding:0 6px; margin-left:8px;}
 #cookie-bar .cb-enable {background:#007700;}
@@ -201,7 +201,6 @@ Scroll to top button
 	width:auto;
 	height:auto;
     margin: 0;
-    font-size: 3em;
 	text-align:center;
     background: transparent;
 	color: $primary-color;
@@ -209,14 +208,18 @@ Scroll to top button
 	position:fixed;
 	bottom:0px;
 	right:0px;
-    transform: rotate(270deg);
 	display:none;
     z-index: 11;
+}
+
+span.dashicons.dashicons-arrow-up-alt2 {
+    font-size: 30px;
 }
 
 .scrollToTop:hover, .scrollToTop:focus {
 	text-decoration:none;
     background: transparent;
+    outline: none;
     color: scale-color($primary-color, $lightness: -14%);
 }
 
@@ -443,6 +446,7 @@ ul#homeSideLinks li {
 
 .latestNews {
     margin: .5em 0em;
+    border-bottom: 0px solid $gainsboro;
     li {
         list-style-type: none;
         margin-bottom: 1em;
@@ -474,6 +478,7 @@ ul#homeSideLinks li {
 
 .latestNews {
     margin: .5em 0em;
+    border-bottom: 1px solid $gainsboro;
     li {
         list-style-type: none;
         margin-bottom: 1em;
@@ -756,6 +761,7 @@ CATEGORY / TAXONOMY PAGES
 
 #sidebar1 h4 {
     margin-top: 1em;
+    font-weight: 500;
 }
 
 hr:last-child {
@@ -1059,6 +1065,7 @@ PAGE NAVI STYLES
 		}
 	}
 }
+
 /******************************************************************
 COMMENT STYLES
 ******************************************************************/

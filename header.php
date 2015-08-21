@@ -61,7 +61,7 @@
 
 							 <?php get_template_part( 'partials/nav', 'main-offcanvas' ); ?>
 
-                            <button href="#" aria-label="Click or hit enter to scroll to the top of the page" class="scrollToTop"><i class="fi-play-circle"></i></button>
+                            <button href="#" aria-label="Click or hit enter to scroll to the top of the page" class="scrollToTop"><span class="dashicons dashicons-arrow-up-alt2"></span></button>
 
 						</div> <!-- end #inner-header -->
 

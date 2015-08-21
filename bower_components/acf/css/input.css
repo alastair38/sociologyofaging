@@ -10,6 +10,7 @@
 
 .acf_postbox {
 	display: block;
+    bacground: #ffeb3b !important;
 }
 
 .acf_postbox .inside,
@@ -306,8 +307,6 @@ not needed in WP 3.8
 	right: -11px;
 
 	-webkit-transition: opacity 0.25s 0s ease-in-out, visibility 0s linear 0.25s;
-	-moz-transition: opacity 0.25s 0s ease-in-out, visibility 0s linear 0.25s;
-	-o-transition: opacity 0.25s 0s ease-in-out, visibility 0s linear 0.25s;
 	transition: opacity 0.25s 0s ease-in-out, visibility 0s linear 0.25s;
 
 	visibility: hidden;
@@ -316,8 +315,6 @@ not needed in WP 3.8
 
 .acf-image-uploader .has-image:hover .hover {
 	-webkit-transition-delay:0s;
-	-moz-transition-delay:0s;
-	-o-transition-delay:0s;
 	transition-delay:0s;
 
 	visibility: visible;
@@ -426,9 +423,7 @@ not needed in WP 3.8
 .media-modal .media-toolbar,
 .media-modal .attachments,
 .media-modal .media-sidebar {
-	-webkit-transition: all 0.25s ease-out;  /* Safari 3.2+, Chrome */
-       -moz-transition: all 0.25s ease-out;  /* Firefox 4-15 */
-         -o-transition: all 0.25s ease-out;  /* Opera 10.5–12.00 */
+	-webkit-transition: all 0.25s ease-out;  /* Safari 3.2+, Chrome */  /* Firefox 4-15 */  /* Opera 10.5–12.00 */
             transition: all 0.25s ease-out;  /* Firefox 16+, Opera 12.50+ */
 }
 
@@ -500,9 +495,7 @@ not needed in WP 3.8
 .media-modal.acf-media-modal .media-toolbar,
 .media-modal.acf-media-modal .attachments,
 .media-modal.acf-media-modal .media-sidebar {
-	-webkit-transition: none;  /* Safari 3.2+, Chrome */
-       -moz-transition: none;  /* Firefox 4-15 */
-         -o-transition: none;  /* Opera 10.5–12.00 */
+	-webkit-transition: none;  /* Safari 3.2+, Chrome */  /* Firefox 4-15 */  /* Opera 10.5–12.00 */
             transition: none;  /* Firefox 16+, Opera 12.50+ */
 }
 
@@ -642,8 +635,6 @@ not needed in WP 3.8
 	right: -10px;
 
 	-webkit-transition: opacity 0.25s 0s ease-in-out, visibility 0s linear 0.25s;
-	-moz-transition: opacity 0.25s 0s ease-in-out, visibility 0s linear 0.25s;
-	-o-transition: opacity 0.25s 0s ease-in-out, visibility 0s linear 0.25s;
 	transition: opacity 0.25s 0s ease-in-out, visibility 0s linear 0.25s;
 
 	visibility: hidden;
@@ -652,8 +643,6 @@ not needed in WP 3.8
 
 .acf-file-uploader .has-file:hover .hover {
 	-webkit-transition-delay:0s;
-	-moz-transition-delay:0s;
-	-o-transition-delay:0s;
 	transition-delay:0s;
 
 	visibility: visible;
@@ -1303,8 +1292,8 @@ th.acf-conditional_logic-hide.acf-show-blank .inner {
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (   min--moz-device-pixel-ratio: 2),
-only screen and (     -o-min-device-pixel-ratio: 2/1),
 only screen and (        min-device-pixel-ratio: 2),
+only screen and (                -webkit-min-device-pixel-ratio: 2),
 only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) {
 

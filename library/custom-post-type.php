@@ -244,7 +244,7 @@ if(function_exists("register_field_group"))
 				'type' => 'email',
 				'instructions' => 'Add a contact email',
 				'default_value' => '',
-				'placeholder' => '',
+				'placeholder' => 'eg: alastair@alastaircox.com',
 				'prepend' => '',
 				'append' => '',
 			),
@@ -1058,17 +1058,19 @@ if(function_exists("register_field_group"))
 		'fields' => array (
 			array (
 				'key' => 'field_55931c347c124',
-				'label' => 'Upload Document',
+				'label' => 'Upload First Document',
 				'name' => 'upload_one',
 				'type' => 'file',
+                'instructions' => 'Add a file related to you content',
 				'save_format' => 'object',
 				'library' => 'all',
 			),
 			array (
 				'key' => 'field_55931c5f7c125',
-				'label' => 'Upload Document',
+				'label' => 'Upload Second Document',
 				'name' => 'upload_two',
 				'type' => 'file',
+                'instructions' => 'Use this field to add any further file related to you content',
 				'save_format' => 'object',
 				'library' => 'all',
 			),
@@ -1274,6 +1276,9 @@ if(function_exists("register_field_group"))
 			'position' => 'acf_after_title',
 			'layout' => 'default',
 			'hide_on_screen' => array (
+                0 => 'excerpt',
+				1 => 'format',
+                2 => 'tags',
 			),
 		),
 		'menu_order' => -1,
@@ -1334,6 +1339,37 @@ if(function_exists("register_field_group"))
 		),
 		'options' => array (
 			'position' => 'acf_after_title',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+    	register_field_group(array (
+		'id' => 'acf_adding-a-featured-image',
+		'title' => 'Adding A Featured Image',
+		'fields' => array (
+			array (
+				'key' => 'field_55d7153ddfee3',
+				'label' => 'Images',
+				'name' => '',
+				'type' => 'message',
+				'message' => 'This’ allows you to upload a single image file that will be displayed prominently with your content.<br><br> Click on the <strong>\'set featured image\'</strong> link below to get started.<br><br> Additional images can be added to the content directly using the \'Add Media\' button above the main text editor box.',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '!=',
+					'value' => 'page',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'side',
 			'layout' => 'default',
 			'hide_on_screen' => array (
 			),
