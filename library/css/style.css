@@ -6881,7 +6881,7 @@ style a page via class
   width: 100%; }
 
 #cookie-bar.fixed.bottom {
-  bottom: 15px;
+  bottom: 0px;
   top: auto; }
 
 #cookie-bar p {

@@ -37,12 +37,16 @@
         }
 
         $deadline = DateTime::createFromFormat('Ymd', get_field('deadline_date'));
-        $dead_time = ' / ' . get_field('deadline_time');
+        $deadlineTime = get_field('deadline_time');
+        if($deadlineTime) {
+            $dead_time = ' / ' . $deadlineTime;
+        }
         if($deadline) {
-        echo '<span><strong>Deadline -</strong> ' . $deadline->format('F d, Y') . $dead_time;
+        echo '<span><strong>Deadline -</strong> ' . $deadline->format('F d, Y') . $dead_time . '</span>';
         }
 
-        the_content();
+        $content = '<div class="entry-content">' . get_the_content() . '</div>';
+        echo $content;
 
         $more = get_field('more_information');
         if($more) {

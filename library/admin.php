@@ -107,7 +107,7 @@ you like.
 
 // Custom Backend Footer
 function joints_custom_admin_footer() {
-	_e('<span id="footer-thankyou">Developed by <a href="http://yoursite.com" target="_blank">Your Site Name</a></span>.', 'jointstheme');
+	_e('<span id="footer-thankyou">Developed by <a href="http://alastaircox.com" target="_blank">Alastair Cox</a></span>.', 'jointstheme');
 }
 
 // adding it to the admin area
