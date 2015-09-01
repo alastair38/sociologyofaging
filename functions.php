@@ -191,7 +191,7 @@ function fb_add_custom_user_profile_fields( $user ) {
 			</label></th>
 			<td>
                 <input type="text" name="rc11Role" id="rc11Role" value="<?php echo esc_attr( get_the_author_meta( 'rc11Role', $user->ID ) ); ?>" class="regular-text"/><br />
-				<span class="description"><?php _e('Please enter your role within RC-11 eg: president, committee member.', 'your_textdomain'); ?></span>
+				<span class="description"><?php _e('This field is for your role within RC-11 eg: President, Officer-at-large and it should already be completed. If you have any questions about it, contact alastair@alastaircox.com', 'your_textdomain'); ?></span>
 			</td>
 		</tr>
         <tr>
