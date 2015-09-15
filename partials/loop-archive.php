@@ -20,7 +20,8 @@
         }
 
         $employer = get_field('institution');
-        if($employer) {
+        if ($employer && is_post_type_archive( ))
+         {
         echo '<span><strong>Employer - </strong>' . $employer . '</span>';
         }
 
@@ -34,13 +35,18 @@
         echo '<span><strong>Date -</strong> ' . $date->format('F d, Y') . '</span>' ;
         }
 
-        $deadline = DateTime::createFromFormat('Ymd', get_field('deadline_date'));
-        $dead_time = get_field('deadline_time');
-        if($deadline) {
-        echo '<span><strong>Deadline -</strong> ' . $deadline->format('F d, Y');
+       $deadline = DateTime::createFromFormat('Ymd', get_field('deadline_date'));
+        $deadlineTime = get_field('deadline_time');
+        if($deadlineTime) {
+            $dead_time = ' / ' . $deadlineTime;
         }
-        if($dead_time) {
-        echo ' / ' . $dead_time . '</span>' ;
+        if($deadline) {
+        echo '<span><strong>Deadline -</strong> ' . $deadline->format('F d, Y') . $dead_time . '</span>';
+        }
+
+         $authors = get_field('authors');
+        if($authors) {
+        echo '<span><em>' . $authors . '</em></span>';
         }
 
         $content = get_the_content();

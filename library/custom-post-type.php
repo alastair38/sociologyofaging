@@ -178,13 +178,26 @@ function rc11_conferences() {
 			'menu_icon' => 'dashicons-format-chat', /* the icon for the custom post type menu */
 			'rewrite'	=> array( 'slug' => 'conferences', 'with_front' => false ), /* you can specify its url slug */
 			'has_archive' => true, /* you can rename the slug here */
-			'capability_type' => 'post',
+				'capability_type' => 'conference',
+            'capabilities' => array(
+        'edit_post' => 'edit_conference',
+        'edit_posts' => 'edit_conferences',
+        'edit_others_posts' => 'edit_others_conferences',
+        'edit_published_posts' => 'edit_published_conferences',
+        'publish_posts' => 'publish_conferences',
+        'read_post' => 'read_conference',
+        'read_private_posts' => 'read_private_conferences',
+        'delete_posts' => 'delete_conferences',
+        'delete_others_posts' => 'delete_others_conferences',
+        'delete_published_posts' => 'delete_published_conferences'
+    ),
+    // as pointed out by iEmanuele, adding map_meta_cap will map the meta correctly
+    'map_meta_cap' => true,
 			'hierarchical' => false,
 			/* the next one is important, it tells what's enabled in the post editor */
-			'supports' => array( 'title', 'editor', 'author', 'thumbnail')
+			'supports' => array( 'title', 'author', 'editor', 'thumbnail')
 	 	) /* end of options */
 	); /* end of register post type */
-
 
 }
 	// adding the function to the Wordpress init

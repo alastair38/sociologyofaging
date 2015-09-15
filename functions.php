@@ -385,6 +385,23 @@ function add_theme_caps() {
 }
 add_action( 'admin_init', 'add_theme_caps');
 
+function add_presconf_caps() {
+    // gets the admin role
+    $admins = get_role( 'president' );
+
+    $admins->add_cap( 'edit_conference' );
+    $admins->add_cap( 'edit_conferences' );
+    $admins->add_cap( 'edit_others_conferences' );
+    $admins->add_cap( 'publish_conferences' );
+    $admins->add_cap( 'read_conference' );
+    $admins->add_cap( 'read_private_conferences' );
+    $admins->add_cap( 'delete_conferences' );
+    $admins->add_cap( 'delete_others_conferences' );
+    $admins->add_cap( 'delete_published_conferences' );
+    $admins->add_cap( 'edit_published_conferences' );
+}
+add_action( 'admin_init', 'add_presconf_caps');
+
 function add_sectheme_caps() {
     // gets the secretary role
     $admins = get_role( 'secretary' );
@@ -400,8 +417,25 @@ function add_sectheme_caps() {
 }
 add_action( 'admin_init', 'add_sectheme_caps');
 
+function add_secconf_caps() {
+    // gets the admin role
+    $admins = get_role( 'secretary' );
+
+    $admins->add_cap( 'edit_conference' );
+    $admins->add_cap( 'edit_conferences' );
+    $admins->add_cap( 'edit_others_conferences' );
+    $admins->add_cap( 'publish_conferences' );
+    $admins->add_cap( 'read_conference' );
+    $admins->add_cap( 'read_private_conferences' );
+    $admins->add_cap( 'delete_conferences' );
+    $admins->add_cap( 'delete_others_conferences' );
+    $admins->add_cap( 'delete_published_conferences' );
+    $admins->add_cap( 'edit_published_conferences' );
+}
+add_action( 'admin_init', 'add_secconf_caps');
+
 function add_admintheme_caps() {
-    // gets the secretary role
+    // gets the admin role
     $admins = get_role( 'administrator' );
 
     $admins->add_cap( 'edit_report' );
@@ -416,6 +450,43 @@ function add_admintheme_caps() {
     $admins->add_cap( 'edit_published_reports' );
 }
 add_action( 'admin_init', 'add_admintheme_caps');
+
+function add_adminconf_caps() {
+    // gets the admin role
+    $admins = get_role( 'administrator' );
+
+    $admins->add_cap( 'edit_conference' );
+    $admins->add_cap( 'edit_conferences' );
+    $admins->add_cap( 'edit_others_conferences' );
+    $admins->add_cap( 'publish_conferences' );
+    $admins->add_cap( 'read_conference' );
+    $admins->add_cap( 'read_private_conferences' );
+    $admins->add_cap( 'delete_conferences' );
+    $admins->add_cap( 'delete_others_conferences' );
+    $admins->add_cap( 'delete_published_conferences' );
+    $admins->add_cap( 'edit_published_conferences' );
+}
+add_action( 'admin_init', 'add_adminconf_caps');
+
+
+function add_editorconf_caps() {
+    // gets the admin role
+    $admins = get_role( 'editor' );
+
+    $admins->add_cap( 'edit_conference' );
+    $admins->add_cap( 'edit_conferences' );
+    $admins->add_cap( 'edit_others_conferences' );
+    $admins->add_cap( 'publish_conferences' );
+    $admins->add_cap( 'read_conference' );
+    $admins->add_cap( 'read_private_conferences' );
+    $admins->add_cap( 'delete_conferences' );
+    $admins->add_cap( 'delete_others_conferences' );
+    $admins->add_cap( 'delete_published_conferences' );
+    $admins->add_cap( 'edit_published_conferences' );
+}
+add_action( 'admin_init', 'add_editorconf_caps');
+
+
 
 add_filter( 'pre_get_posts', 'my_get_posts' );
 

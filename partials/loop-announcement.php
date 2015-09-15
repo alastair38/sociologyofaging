@@ -75,7 +75,7 @@
         }
         $website = get_field('website');
         if($website) {
-        echo '<a href="' . $website . '" target="_blank">View the author website</a></span>';
+        echo '<a href="' . $website . '" target="_blank">View the author\'s website</a></span>';
         }
 
 

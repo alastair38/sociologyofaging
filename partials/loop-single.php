@@ -6,19 +6,63 @@
          <?php edit_post_link('Edit Content', '', ''); ?>
     </header> <!-- end article header -->
 
-    <section class="entry-content" itemprop="articleBody">
-		<?php the_post_thumbnail('full'); ?>
-		<?php the_content(); ?>
+    <section class="contribution-details" itemprop="articleBody">
+
+
+<?php
+
+        $authors = get_field('authors');
+        if($authors) {
+        echo '<span><em>' . $authors . '</em></span>';
+        }
+
+        $content = '<div class="entry-content">' . get_the_content() . '</div>';
+        echo $content;
+
+?>
+        <?php
+
+        $file = get_field('upload_one');
+
+        if( $file ):
+
+        $url = $file['url'];
+        $title = $file['title'];
+        ?>
+
+	     <a id="moreInfo" href="<?php echo $url; ?>" target="_blank" title="<?php echo $title; ?>">Download More Information</a>
+         <?php endif; ?>
+         <?php
+
+        $fileB = get_field('upload_two');
+
+        if( $fileB ):
+
+        $urlB = $fileB['url'];
+        $titleB = $fileB['title'];
+       ?>
+	   <a id="moreInfo" href="<?php echo $urlB; ?>" target="_blank" title="<?php echo $titleB; ?>">Download Further Information</a>
+       <?php endif; ?>
+
 	</section> <!-- end article section -->
-
-	<footer class="article-footer">
-		<p class="tags"><?php the_tags('<span class="tags-title">' . __('Tags:', 'jointstheme') . '</span> ', ', ', ''); ?></p>	</footer> <!-- end article footer -->
-
-
 
 </article> <!-- end article -->
 
-<div class="large-4 medium-4 small-12 columns">
-    <?php get_sidebar(); ?>
+<div id="contactDetails" class="large-4 medium-4 small-12 columns">
+    <?php the_post_thumbnail('medium'); ?>
+    <?php
+
+        $authorEmail = get_field('author_email');
+        if($authorEmail) {
+        echo '<h4>Contact Details</h4><span>E: <a href="mailto:' . $authorEmail . '" target="_blank">Email the author</a></span>';
+        }
+        $website = get_field('website');
+        if($website) {
+        echo '<a href="' . $website . '" target="_blank">View the author\'s website</a></span>';
+        }
+
+?>
 </div>
+
+
 
