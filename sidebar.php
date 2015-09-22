@@ -14,8 +14,8 @@
         echo '<h4>All President Reports</h4>';
          foreach( $presreports as $presreport ): ?>
                             <?php $title = get_the_title( $presreport->ID );?>
-                            <a href="<?php echo get_the_permalink( $presreport->ID ); ?>">
-                            <?php echo $title; ?></a>
+                            <h5><a href="<?php echo get_the_permalink( $presreport->ID ); ?>">
+    <?php echo $title; ?></a></h5>
          <?php endforeach;
         $secreports = get_posts(array(
                             'post_type' => 'report',
@@ -25,8 +25,8 @@
         echo '<h4>All Secretary Reports</h4>';
          foreach( $secreports as $secreport ): ?>
                             <?php $title = get_the_title( $secreport->ID );?>
-                            <a href="<?php echo get_the_permalink( $secreport->ID ); ?>">
-                            <?php echo $title; ?></a>
+                            <h5><a href="<?php echo get_the_permalink( $secreport->ID ); ?>">
+                            <?php echo $title; ?></a></h5>
          <?php endforeach;
     }
     ?>
