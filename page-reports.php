@@ -1,4 +1,4 @@
-<?php
+    <?php
 /*
 Template Name: Reports Page
 */
@@ -23,9 +23,11 @@ Template Name: Reports Page
                         ?>
 
                         <?php if( $presreports ): ?>
+                        <?php $count = 0; ?>
                         <div class="large-8 medium-8 small-12 columns">
                         <h1  id="taxHeader">President Reports</h1>
                         <?php foreach( $presreports as $presreport ): ?>
+
                         <article class="">
                             <?php $title = get_the_title( $presreport->ID );?>
                             <h2><a href="<?php echo get_the_permalink( $presreport->ID ); ?>">
