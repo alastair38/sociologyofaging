@@ -14,12 +14,12 @@
         $authors = get_field('authors');
         if($authors) {
         echo '<span><em>' . $authors . '</em></span>';
-        }
+        }?>
 
-        $content = '<div class="entry-content">' . get_the_content() . '</div>';
-        echo $content;
+        <div class="entry-content">
+           <?php the_content();?>
+        </div>
 
-?>
         <?php
 
         $file = get_field('upload_one');
@@ -49,7 +49,8 @@
 </article> <!-- end article -->
 
 <div id="contactDetails" class="large-4 medium-4 small-12 columns">
-    <?php the_post_thumbnail('medium'); ?>
+    <?php the_post_thumbnail('medium');?>
+
     <?php
 
         $authorEmail = get_field('author_email');
@@ -58,10 +59,11 @@
         }
         $website = get_field('website');
         if($website) {
-        echo '<a href="' . $website . '" target="_blank">View the author\'s website</a></span>';
+        echo '<span><a href="' . $website . '" target="_blank">View the author\'s website</a></span>';
         }
-
-?>
+        get_search_form( );
+        echo '<hr>';
+        get_template_part( 'partials/content', 'latestnews' );?>
 </div>
 
 

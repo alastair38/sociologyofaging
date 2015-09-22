@@ -44,10 +44,11 @@
         if($deadline) {
         echo '<span><strong>Deadline -</strong> ' . $deadline->format('F d, Y') . $dead_time . '</span>';
         }
-
-        $content = '<div class="entry-content">' . get_the_content() . '</div>';
-        echo $content;
-
+        ?>
+        <div class="entry-content">
+           <?php the_content();?>
+        </div>
+        <?php
         $more = get_field('more_information');
         if($more) {
         echo  '<a id="moreInfo" href="' . $more . '" target="_blank">Follow this link for further details</a>';
@@ -149,6 +150,10 @@
 
          if($pubType === 'Report') {
         echo  '<div id="pubDetails"><h4>Publication Details</h4>' . $authors . ' ' . $yearPub . '<em>' . $title . '</em>, ' . $placePub . $publisher . '</div>';
-        }?>
+        }
+    get_search_form( );
+        echo '<hr>';
+        get_template_part( 'partials/content', 'latestnews' );
+    ?>
 </div>
 
