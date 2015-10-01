@@ -384,6 +384,7 @@ function add_theme_caps() {
     $admins->add_cap( 'read_private_reports' );
     $admins->add_cap( 'delete_reports' );
     $admins->add_cap( 'edit_published_reports' );
+    $admins->add_cap('upload_files');
 }
 add_action( 'admin_init', 'add_theme_caps');
 
@@ -433,6 +434,7 @@ function add_secconf_caps() {
     $admins->add_cap( 'delete_others_conferences' );
     $admins->add_cap( 'delete_published_conferences' );
     $admins->add_cap( 'edit_published_conferences' );
+    $admins->add_cap('upload_files');
 }
 add_action( 'admin_init', 'add_secconf_caps');
 
