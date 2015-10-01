@@ -301,6 +301,7 @@ array(
 'publish_pages' => true,
 'edit_others_posts' => true, // Allows user to edit others posts not just their own
 'create_posts' => true, // Allows user to create new posts
+'upload_files' => true,
 'manage_categories' => false, // Allows user to manage post categories
 'publish_posts' => true, // Allows the user to publish, otherwise posts stays in draft mode
 'edit_themes' => false, // false denies this capability. User can’t edit your theme
@@ -327,6 +328,7 @@ array(
 'publish_pages' => true,
 'edit_others_posts' => true, // Allows user to edit others posts not just their own
 'create_posts' => true, // Allows user to create new posts
+'upload_files' => true,
 'manage_categories' => false, // Allows user to manage post categories
 'publish_posts' => true, // Allows the user to publish, otherwise posts stays in draft mode
 'edit_themes' => false, // false denies this capability. User can’t edit your theme
