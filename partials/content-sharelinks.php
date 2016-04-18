@@ -1,6 +1,6 @@
 <?php
-$find = array("&");
-$replace = array("and");
+$find = array('#038;', '&');
+$replace = array('', 'and');
 $string = get_the_title();
 ?>
 <ul class="share-links columns">
