@@ -12,42 +12,34 @@ $thumb_url = wp_get_attachment_image_src($thumb_id,'thumbnail-size', true);
 
 			<div id="content" style="background:url('<?php echo $thumb_url[0];?>') no-repeat; background-size: 100% 100%;">
 
-
-
-				<div id="inner-content" class="">
+				<div id="inner-content">
 
 				    <div class="large-8 medium-12 columns" role="main">
 
 						<?php get_template_part( 'partials/loop', 'home' ); ?>
 
+            </div>
 
-                    </div>
+            <div class="large-4 medium-12 columns" role="main">
 
-                        <div class="large-4 medium-12 columns" role="main">
-
-						<aside id="homeAside">
+							<aside id="homeAside">
 
                         <?php get_template_part( 'partials/content', 'latestnews' ); ?>
 
                         <?php $page4 = get_page_by_title( 'RC11 Communications' );
                         $page5 = get_page_by_title( 'News + Articles' );
 ?>
-<ul id="homeSideLinks">
+								<ul id="homeSideLinks">
                             <li><a href="<?php echo get_page_link($page4->ID); ?>"><?php echo get_the_title($page4->ID);?></a></li>
                             <li><a href="<?php echo get_page_link($page5->ID); ?>"><?php echo get_the_title($page5->ID);?></a></li>
                             <li><a href="<?php echo get_post_type_archive_link( 'announcement' ); ?>">Member Announcements</a></li>
-        </ul>
+        				</ul>
 
-
-                        </aside>
+              </aside>
 
     				</div> <!-- end #main -->
 
-    </div> <!-- end #main -->
-
-
-
-				</div> <!-- end #inner-content -->
+    		</div> <!-- end #inner-content -->
 
 			</div> <!-- end #content -->
 
