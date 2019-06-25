@@ -157,10 +157,7 @@ class acf_revisions
 				// Add a value of the revision ID (as there is no way to determin this within the '_wp_post_revision_field_' filter!)
 				if( isset($_GET['action'], $_GET['left'], $_GET['right']) && $_GET['action'] == 'diff' )
 				{
-					global $left_revision, $right_revision;
-
-					$left_revision->$field['name'] = 'revision_id=' . $_GET['left'];
-					$right_revision->$field['name'] = 'revision_id=' . $_GET['right'];
+					
 				}
 
 			}
