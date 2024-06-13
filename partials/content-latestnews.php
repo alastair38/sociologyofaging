@@ -33,6 +33,6 @@
                         <?php endif; ?>
                         <div class="latest-newsletter">
                         <h4>Our Latest newsletter</h4>
-                        <?php echo do_shortcode('[mailpoet_archive]');?>
+                        <?php echo do_shortcode('[mailpoet_archive limit="1"]');?>
                         </div>
 
