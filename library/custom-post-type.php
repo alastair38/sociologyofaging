@@ -47,7 +47,7 @@ function rc11_contributions() {
 
 
  register_taxonomy( 'contribution_type',
-    	array('announcement'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
+    	array('announcement', 'post'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
     	array('hierarchical' => true,     /* if this is true, it acts like categories */
     		'labels' => array(
     			'name' => __( 'Announcement Types', 'rc11theme' ), /* name of the custom taxonomy */

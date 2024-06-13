@@ -16,7 +16,7 @@
 
                         <?php if( $presreports ): ?>
                         <div class="large-8 medium-8 small-12 columns">
-                        <h1  id="taxHeader">RC11 Conferences</h1>
+                        <h1  id="taxHeader">All Events</h1>
                         <?php foreach( $presreports as $presreport ): ?>
                         <article class="">
                             <?php $title = get_the_title( $presreport->ID );?>
@@ -32,9 +32,9 @@
 
                              <?php
                             $content = apply_filters('the_content', $presreport->post_content);
-                            $trimContent = wp_trim_words( $the_content, $num_words = 50, $more = null );
+                            $trimContent = wp_trim_words( $content, $num_words = 50, $more = null );
 
-                            echo $content;
+                            echo $trimContent;
                             ?>
 
 

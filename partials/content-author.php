@@ -6,7 +6,7 @@ $role = get_user_role($curauth->ID);
 <div class="author small-12 columns">
 
 
-		<div class="authorInfo large-8 medium-8 small-12 columns" itemscope itemtype="http://schema.org/Person">
+		<div class="authorInfo large-12 medium-12 small-12 columns" itemscope itemtype="http://schema.org/Person">
             <div class="authorAvatar">
 
           <?php echo get_avatar( $curauth->user_email, '80' ); ?>
@@ -60,91 +60,6 @@ $role = get_user_role($curauth->ID);
 		</div>
 
 
-
-
-<div class="large-4 medium-4 small-12 columns">
-    <div class="allAuthors">
-
-
-
-<?php
-
-if ($role != author ){?>
-
-    <h3>Other Committee Members</h3>
-
-    <?php
-    $id = $curauth->ID;
-    $args = array(
-	'blog_id'      => $GLOBALS['blog_id'],
-	'role'         => 'president',
-	'exclude'      => array($id),
-	'orderby'      => 'display_name',
-	'order'        => 'ASC',
-	'count_total'  => false,
-	'fields'       => 'all',
-	'who'          => ''
- ); ?>
-
-    <?php
-    $blogusers = get_users( $args );
-    foreach ( $blogusers as $user ) {?>
-
-        <h4 class="authorName"><a href="<?php echo get_author_posts_url( $user->ID ); ?>"><?php echo $user->display_name; ?></a></h4>
-<?php }
-
-    ?>
-    <?php
-    $id = $curauth->ID;
-    $args = array(
-	'blog_id'      => $GLOBALS['blog_id'],
-	'role'         => 'secretary',
-	'exclude'      => array($id),
-	'orderby'      => 'display_name',
-	'order'        => 'ASC',
-	'count_total'  => false,
-	'fields'       => 'all',
-	'who'          => ''
- ); ?>
-
-    <?php
-    $blogusers = get_users( $args );
-    foreach ( $blogusers as $user ) {?>
-
-        <h4 class="authorName"><a href="<?php echo get_author_posts_url( $user->ID ); ?>"><?php echo $user->display_name; ?></a></h4>
-<?php }
-
-    ?>
-
-      <?php
-    $id = $curauth->ID;
-    $args = array(
-	'blog_id'      => $GLOBALS['blog_id'],
-	'role'         => 'editor',
-	'exclude'      => array($id),
-    'orderby'   => 'meta_value',
-    'order'     => 'ASC',
-    'meta_key'  => 'last_name',
-	'count_total'  => false,
-	'fields'       => 'all',
-	'who'          => ''
- ); ?>
-
-    <?php
-    $blogusers = get_users( $args );
-    foreach ( $blogusers as $user ) {?>
-
-        <h4 class="authorName"><a href="<?php echo get_author_posts_url( $user->ID ); ?>"><?php echo $user->display_name; ?></a></h4>
-<?php }
-
-    ?>
-
-    <?php } else {
-    get_template_part( 'partials/content', 'latestnews' );
-} ?>
-    </div>
-</div>
-</div>
 <hr>
 
 <h2 class="authorPosts">Contributions by <?php echo $curauth->display_name; ?></h2>

@@ -8,7 +8,7 @@
 
 					    <?php if (is_category()) { ?>
 						    <h1 id="taxHeader">
-							    <span>Articles posted in </span> <?php single_cat_title(); ?>
+							   <?php single_cat_title(); ?>
 					    	</h1>
 
 					    <?php } elseif (is_tag()) { ?>
