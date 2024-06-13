@@ -8121,6 +8121,16 @@ ul.off-canvas-list li a:hover {
   .offcanvas-overlap-right .exit-off-canvas:hover {
     background: rgba(255, 255, 255, 0.05);
   }
+
+  .rc11-profile {
+    width: 31%;
+  }
+}
+
+@media only screen and (max-width: 40.062em) {
+  .rc11-profile {
+    width: 100%;
+  }
 }
 
 .no-csstransforms .left-off-canvas-menu {
@@ -10615,7 +10625,6 @@ COMMITTEE PAGE
 .rc11-profile {
   border: 1px solid #aaaaaa;
   padding: 1rem;
-  min-width: 30%;
 }
 
 .rc11-profile a.wp-block-button__link.has-background.wp-element-button {
@@ -10625,7 +10634,8 @@ COMMITTEE PAGE
 
 .rc11-profile a.wp-block-button__link.has-background.wp-element-button:hover,
 .rc11-profile
-  a.wp-block-button__link.has-background.wp-element-button:focus-visible {
+  a.wp-block-button__link.has-background.wp-element-button:focus-visible,
+.rc11-profile a.wp-block-button__link.has-background.wp-element-button:focus {
   border: 1px solid #006080;
   background: transparent !important;
   border-width: 1px;
