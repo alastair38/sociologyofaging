@@ -10450,6 +10450,7 @@ body:not(.home) ul.latestNews {
 
 .latest-newsletter h4 {
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .latest-newsletter a {
